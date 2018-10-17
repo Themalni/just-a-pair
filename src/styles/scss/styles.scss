@@ -1,0 +1,36 @@
+@import './vars';
+
+.main-blue {
+    background-color: $main-blue;
+}
+.light-blue {
+    background-color: $light-blue;
+}
+.orange-accent {
+    background-color: $orange-accent;
+}
+.fade-enter-active, 
+.fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.fancy-font {
+    font-family: 'Playfair Display', serif;
+}
+.btn-lg {
+    font-size: 1.3em;
+}
+.button-accent {
+    background-color: $orange-accent;
+    color: #fff;
+
+    &:hover {
+        background-color: $orange-accent / 1.2;
+        cursor: pointer;
+    }
+}
+.disabled {
+    filter: grayscale(20%);
+}
