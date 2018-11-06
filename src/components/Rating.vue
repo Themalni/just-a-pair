@@ -27,11 +27,6 @@ import StarRating from 'vue-star-rating'
 export default {
   name: 'rating',
   props: ['productRating'],
-  data () {
-    return {
-      
-    }
-  },
   components: {
     StarRating
   }

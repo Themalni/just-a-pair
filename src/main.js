@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbvue/build/css/mdb.css';
@@ -15,6 +16,7 @@ Vue.config.productionTip = false
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'
 
+Vue.use(VueResource)
 Vue.use(VueRouter)
 Vue.use(VueMaterial)
 Vue.use(vueScrollto)
@@ -22,6 +24,7 @@ Vue.use(vueScrollto)
 const router = new VueRouter({
   routes: Routes,
   mode: 'history',
+  base: process.env.BASE_URL,
   scrollBehavior (to) {
     if (to.hash) {
       return {

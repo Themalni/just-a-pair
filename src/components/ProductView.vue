@@ -20,7 +20,7 @@
                            <div class="product-stock font-bold" :class="{'deep-orange-text': item.stock == 'out of stock'}" >{{ item.stock }}</div> 
                         </div>
                     </div>
-                    <div v-if="item.sale" class="product-price fancy-font deep-orange-text">${{ item.price | salePrice(item.salePercentage) }}</div>
+                    <div v-if="item.sale" class="product-price fancy-font deep-orange-text mb-3">${{ item.price | salePrice(item.salePercentage) }}</div>
                     <div v-else class="product-price mb-3">${{ item.price }}</div>
                     <size-variations/>
                     <button class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase" :class="{disabled: item.stock == 'out of stock'}" @click="addToCart(item.id)" :disabled="item.stock == 'out of stock'">Add to cart</button>
