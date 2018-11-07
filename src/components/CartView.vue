@@ -12,7 +12,7 @@
                             <th scope="col">Title</th>
                             <th scope="col">Color</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Remove Item</th>
+                            <th scope="col">Remove</th>
                         </tr>
                     </thead>
                     <tbody name="fade" >
@@ -90,7 +90,16 @@ export default {
 
 <style lang="scss" scoped>
 @import "../styles/scss/styles.scss";
-
+.modal-body {
+    @include device-size(xs) {
+        padding: 0;   
+    }
+}
+.modal-dialog {
+    @include device-size(xs) {
+        margin: 0;    
+    }
+}
 .btn-remove {
     padding: 5px 10px;
 }
@@ -106,9 +115,15 @@ export default {
         font-weight: bold;
         font-size: 1.1em;
         color: #444;
+
+        @include device-size(xs) {
+            font-size: 1em;
+        }
     }
     th {
-        min-width: 200px;
+        @include device-size(lg, xl) {
+            min-width: 200px;        
+        }
     }
     tfoot {
         th,

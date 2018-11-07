@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <a href="#sizeGuideModal" class="size-guide-link" data-toggle="modal" data-target="#sizeGuideModal">
+                <a href="#sizeGuideModal" class="size-guide-link mb-3" data-toggle="modal" data-target="#sizeGuideModal">
                     <md-icon>straighten</md-icon><span class="link-text">Size guide</span>
                 </a>
             </div>

@@ -2,7 +2,7 @@
     <div class="container-fluid pr-0 pl-0">
         <div class="row no-gutters">
             <div class="col-md-12 grid-image-container">
-                <img class="grid-image grid-image-overlay" :src="headerImage"/>
+                <!-- <img class="grid-image grid-image-overlay" :src="headerImage"/> -->
                 <div class="grid-image-text">
                     <h2 class="sub-header">Welcome to</h2>
                     <h1 class="header text-uppercase font-weight-bold">Just a Pair</h1>
@@ -12,7 +12,7 @@
             </div>
         </div>
         <div class="row no-gutters">
-            <div class="col-md-4" v-for="item in gridImages" :key="item.id">
+            <div class="col-md-4 col-sm-4" v-for="item in gridImages" :key="item.id">
                 <img class="grid-image" :src="item.image"/>
                 <div class="grid-image-text-bottom pb-4">
                     <h2 class="sub-header font-weight-bold">{{ item.header }}</h2>
@@ -47,6 +47,11 @@ export default {
 
 .grid-image-container {
     position: relative;
+    background-image: url('/assets/header_image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
 
     &:before {
         content: "";

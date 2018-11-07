@@ -106,6 +106,10 @@ export default {
 .product {
     margin-top: 3.5em;
     padding-bottom: 5.6em;
+    
+    @include device-size(xs, sm) {
+        padding-bottom: 0;
+    }
 }
 .product-name,
 .product-price {

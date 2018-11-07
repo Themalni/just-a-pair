@@ -57,6 +57,10 @@ export default {
     top: 12%;
     color: #fff;
     text-align: center;
+
+    @include device-size(xs, sm) {
+        top: 20%;
+    }
 }
  a:not(.md-button) {
      position: relative;

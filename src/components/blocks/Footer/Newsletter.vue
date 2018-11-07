@@ -6,7 +6,7 @@
                     <p class="newsletter-text">Subscribe to our newsletter and receive a coupon for 15% off your first purchase</p>
                 </div>
                 <div class="col-md-3 text-right">
-                    <button class="btn btn-outline-light newsletter-button">Subscribe</button>
+                    <button class="btn btn-outline-light newsletter-button mt-3">Subscribe</button>
                 </div> 
             </div>
         </div>
@@ -24,21 +24,28 @@
     color: #fff;
 }
 .newsletter-button {
-    min-width: 250px;
     font-size: 1.2em;
     box-shadow: none;
     color: #fff !important;
     border-color: #fff !important;
 
+    @include device-size(xl) {
+        min-width: 250px;    
+    }
+
     &:hover {
         box-shadow: 0 1px 3px #333;
     }
 }
-p {
+.newsletter-text {
     font-size: 1.7em;
     line-height: 2;
     color: $dark-grey;
     margin-bottom: 0;
     color: #fff;
+
+    @include device-size(xs, sm) {
+        line-height: 1.4;    
+    }
 }
 </style>

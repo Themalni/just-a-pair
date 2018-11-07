@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-6">
         <router-link :to="'/product-view/' + id" class="product-link">
             <div class="product-thumbnail pb-2" @click="showProduct(id)">
                 <div v-if="!onSale" v-show="offer" class="offer-tag" :class="{accent: onSale}">{{ offer }}</div>

@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-8 footer-links">
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-sm-6">
                                 <h4 class="links-header">Departments</h4>
                                 <div class="col-md-12 links">
                                     <a class="" href="#">Women</a>
@@ -15,7 +15,7 @@
                                     <a class="" href="#">Home</a>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-sm-6">
                                 <h4 class="links-header">User Profile</h4>
                                 <div class="col-md-12 links">
                                     <a class="" href="#">Orders</a>
@@ -23,7 +23,7 @@
                                     <a class="" href="#">Coupons</a>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-sm-6">
                                 <h4 class="links-header">Help</h4>
                                 <div class="col-md-12 links">
                                     <a class="" href="#">How to order</a>
@@ -32,7 +32,7 @@
                                     <a class="" href="#">Returns</a>
                                 </div>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-sm-6">
                                 <h4 class="links-header">About</h4>
                                 <div class="col-md-12 links">
                                     <a class="" href="#">About Us</a>

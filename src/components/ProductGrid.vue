@@ -46,6 +46,10 @@ export default {
     text-align: center;
     margin-bottom: 4em;
     padding-top: 4em;
+
+    @include device-size(xs, sm) {
+        padding-top: 0;   
+    }
 }
 .collection-header {
     color: #333;

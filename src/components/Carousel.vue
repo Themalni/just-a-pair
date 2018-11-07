@@ -40,6 +40,14 @@ export default {
 <style lang="scss" scoped>
 @import "../styles/scss/styles.scss";
 
+.carousel {
+    @include device-size(xs){
+        margin-bottom: 4.5em;
+    }
+     @include device-size(sm){
+        margin-bottom: 5.5em;
+    }
+}
 .slider {
     width: 100%;
     background-color: $grey;
