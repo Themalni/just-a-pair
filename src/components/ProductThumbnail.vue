@@ -3,7 +3,7 @@
         <router-link :to="'/product-view/' + id" class="product-link">
             <div class="product-thumbnail pb-2" @click="showProduct(id)">
                 <div v-if="!onSale" v-show="offer" class="offer-tag" :class="{accent: onSale}">{{ offer }}</div>
-                <div v-else v-show="offer" class="offer-tag" :class="{accent: onSale}">{{ salePercentage + "%" }}</div>
+                <div v-else v-show="offer" class="offer-tag" :class="{accent: onSale}">{{ "-" + salePercentage + "%" }}</div>
                 <div class="product-image">
                     <img :src="image">
                 </div>
@@ -42,8 +42,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .product-thumbnail {
     width: 100%;
     margin-bottom: 1.5em;

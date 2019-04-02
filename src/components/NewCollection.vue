@@ -40,8 +40,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .collection {
     text-align: center;
     padding-top: 4em;

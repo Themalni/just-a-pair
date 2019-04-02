@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./styles/scss/styles.scss";
-
 button {
     border: 0;
     background-color: transparent;

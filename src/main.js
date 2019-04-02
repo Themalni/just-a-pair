@@ -3,7 +3,6 @@ import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import 'bootstrap-css-only/css/bootstrap.min.css'; 
 import 'mdbvue/build/css/mdb.css';
-import './styles/scss/styles.scss';
 import App from './App.vue';
 import vueScrollto from 'vue-scrollto';
 import {store} from './store';
@@ -12,6 +11,9 @@ import Newsletter from './components/blocks/Footer/Newsletter.vue';
 import Routes from './routes';
 
 Vue.config.productionTip = false
+
+// Global CSS styles
+import '@/assets/scss/styles.scss';
 
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.min.css'

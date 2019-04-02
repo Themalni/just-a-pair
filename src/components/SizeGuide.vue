@@ -101,8 +101,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .table {
     border: 1px solid $main-blue;
     td,

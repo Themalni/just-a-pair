@@ -34,8 +34,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .product-rating-header {
   font-size: 1.2em;
 }

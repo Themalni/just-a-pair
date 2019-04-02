@@ -36,8 +36,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .size-name {
     font-size: 1.2em;
 

@@ -48,8 +48,6 @@ data() {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .product-details {
     padding: 30px 0;
     color: #333;

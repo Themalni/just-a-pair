@@ -101,8 +101,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .product {
     margin-top: 3.5em;
     padding-bottom: 5.6em;

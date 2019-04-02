@@ -89,7 +89,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
 .modal-body {
     @include device-size(xs) {
         padding: 0;   

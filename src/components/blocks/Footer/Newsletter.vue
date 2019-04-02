@@ -15,8 +15,6 @@
 
 
 <style lang="scss" scoped>
-@import "../../../styles/scss/styles.scss";
-
 .newsletter {
     border-bottom: 1px solid $grey;
     padding: 30px 0;

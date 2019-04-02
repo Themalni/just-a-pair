@@ -43,8 +43,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
-
 .grid-image-container {
     position: relative;
     background-image: url('/assets/header_image.jpg');

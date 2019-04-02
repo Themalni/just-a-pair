@@ -18,7 +18,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/styles.scss";
 
 .breadcrumbs {
     margin: 2em 0 1em;
