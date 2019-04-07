@@ -2,8 +2,8 @@
     <div class="col-md-4 col-sm-6">
         <router-link :to="'/product-view/' + id" class="product-link">
             <div class="product-thumbnail pb-2" @click="showProduct(id)">
-                <div v-if="!onSale" v-show="offer" class="offer-tag" :class="{accent: onSale}">{{ offer }}</div>
-                <div v-else v-show="offer" class="offer-tag" :class="{accent: onSale}">{{ "-" + salePercentage + "%" }}</div>
+                <div v-if="!onSale" class="offer-tag">{{ offer }}</div>
+                <div v-else class="offer-tag" :class="{accent: onSale}">{{ `-${salePercentage}%` }}</div>
                 <div class="product-image">
                     <img :src="image">
                 </div>
@@ -19,17 +19,37 @@
 
 export default {
     name: 'product-thumbnail',
-    props: [
-        'id',
-        'image', 
-        'offer', 
-        'title', 
-        'price', 
-        'onSale', 
-        'salePercentage', 
-        'stock', 
-        'sliderImages'
-    ],
+    props: {
+        id: {
+            type: Number
+        },
+        image: {
+            type: String
+        },
+        offer: {
+            type: String
+        },
+        title: {
+            type: String
+        },
+        price: {
+            type: Number
+        },
+        onSale: {
+            type: Boolean,
+            default: false
+        },
+        salePercentage: {
+            type: [Number, String]
+        },
+        stock: {
+            type: String,
+            default: 'in stock'
+        },
+        sliderImages: {
+            type: Array
+        }
+    },
     computed: {
         products() { return this.$store.state.products; }
     },
@@ -37,7 +57,7 @@ export default {
         showProduct(id) {
             this.$store.dispatch('showProduct', id);
         }
-    } 
+    }
 }
 </script>
 
@@ -74,7 +94,7 @@ export default {
     width: 100%;
     background-color: $light-grey;
     overflow: hidden;
-    
+
     img {
         transition: all 0.5s linear;
     }

@@ -5,7 +5,7 @@
             <breadcrumbs/>
             <div class="row" v-for="(item, index) in displaySingleProduct" :key="index">
                 <div class="col-md-7">
-                    <carousel 
+                    <carousel
                         :image="item.image"
                         :sliderImages="item.sliderImages"/>
                 </div>
@@ -17,13 +17,14 @@
                             <div class="product-id text-uppercase">sku: {{ item.sku }}</div>
                         </div>
                         <div class="col-md-7">
-                           <div class="product-stock font-bold" :class="{'deep-orange-text': item.stock == 'out of stock'}" >{{ item.stock }}</div> 
+                           <div class="product-stock font-bold" :class="{'deep-orange-text': item.stock === 'out of stock'}" >{{ item.stock }}</div>
                         </div>
                     </div>
                     <div v-if="item.sale" class="product-price fancy-font deep-orange-text mb-3">${{ item.price | salePrice(item.salePercentage) }}</div>
                     <div v-else class="product-price mb-3">${{ item.price }}</div>
-                    <size-variations/>
-                    <button class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase" :class="{disabled: item.stock == 'out of stock'}" @click="addToCart(item.id)" :disabled="item.stock == 'out of stock'">Add to cart</button>
+                    <size-variations
+                        :sizes="item.sizes"/>
+                    <button class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase" :class="{disabled: item.stock == 'out of stock'}" @click="addToCart(item.id)" :disabled="item.stock === 'out of stock'">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -62,22 +63,22 @@ export default {
         ProductGrid
     },
     props: [
-        'id', 
-        'image', 
-        'offer', 
-        'title', 
-        'price', 
+        'id',
+        'image',
+        'offer',
+        'title',
+        'price',
         'sku',
-        'color', 
-        'stock', 
-        'onSale', 
+        'color',
+        'stock',
+        'onSale',
         'salePercentage',
         'productRating'
     ],
-    
+
     computed: {
         ...mapGetters([
-            'products', 
+            'products',
             'productPreview',
             'displaySingleProduct'
         ]),
@@ -96,7 +97,7 @@ export default {
         addToCart(id) {
             this.$store.dispatch('addToCart', id);
         }
-    }  
+    }
 }
 </script>
 
@@ -104,7 +105,7 @@ export default {
 .product {
     margin-top: 3.5em;
     padding-bottom: 5.6em;
-    
+
     @include device-size(xs, sm) {
         padding-bottom: 0;
     }

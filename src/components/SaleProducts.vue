@@ -4,13 +4,13 @@
         <div class="container">
             <h1 class="collection-header">{{ header }}</h1>
             <div class="row collection-items">
-                <product-thumbnail 
-                    v-for="item in newCollection" 
-                    :key="item.id" 
-                    :id="item.id" 
-                    :offer="item.offer" 
+                <product-thumbnail
+                    v-for="item in newCollection"
+                    :key="item.id"
+                    :id="item.id"
+                    :offer="item.offer"
                     :title="item.title"
-                    :image="item.image" 
+                    :image="item.image"
                     :price="item.price"
                     :onSale="item.sale"
                     :salePercentage="item.salePercentage">

@@ -11,6 +11,7 @@
                             <th scope="col">Image</th>
                             <th scope="col">Title</th>
                             <th scope="col">Color</th>
+                            <th scope="col">Size</th>
                             <th scope="col">Price</th>
                             <th scope="col">Remove</th>
                         </tr>
@@ -20,15 +21,16 @@
                             v-bind="cart"
                             :key="index">
                             <th scope="row">
-                            <img :src="item.image" class="cart-item-img"> 
+                            <img :src="item.image" class="cart-item-img">
                             </th>
                             <td>{{ item.title }}</td>
                             <td>{{ item.color }}</td>
+                            <td>{{ item.size }}</td>
                             <td>${{ item.price }}</td>
                             <td scope="col">
                                 <button class="btn light-blue btn-sm btn-remove" @click="removeFromCart(index)">X</button>
                             </td>
-                        </tr>    
+                        </tr>
                     </tbody>
                     <tfoot>
                         <tr v-show="total > 0">
@@ -57,16 +59,17 @@ import { mapGetters} from 'vuex'
 
 export default {
     props: [
-        'id', 
-        'title', 
-        'price', 
-        'image', 
-        'color'
+        'id',
+        'title',
+        'price',
+        'image',
+        'color',
+        'size'
     ],
     computed: {
         ...mapGetters([
-            'products', 
-            'productPreview', 
+            'products',
+            'productPreview',
             'inCart'
         ]),
         cart() {
@@ -91,12 +94,12 @@ export default {
 <style lang="scss" scoped>
 .modal-body {
     @include device-size(xs) {
-        padding: 0;   
+        padding: 0;
     }
 }
 .modal-dialog {
     @include device-size(xs) {
-        margin: 0;    
+        margin: 0;
     }
 }
 .btn-remove {
@@ -121,7 +124,7 @@ export default {
     }
     th {
         @include device-size(lg, xl) {
-            min-width: 200px;        
+            min-width: 200px;
         }
     }
     tfoot {

@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="size-variations pt-2">
-        <p class="size-name">Size <span class="accent font-weight-bold text-uppercase">36</span></p>
+        <p class="size-name">Size <span class="accent font-weight-bold text-uppercase">{{ selectedSize }}</span></p>
         <div class="row">
             <div class="col-md-7">
-                <div v-for="(value) in sizes" :key="value" class="sizes mb-1 waves-effect waves-light">
-                    <span class="single-size text-uppercase">{{ value }}</span>
+                <div v-for="size in sizes" :key="size.id" class="sizes mb-1 waves-effect waves-light" :class="{ 'size-selected': size.selected === true, 'size-disabled': size.available === false }" :disabled="size.available === false" @click="selectShoesSize(size)">
+                    <span class="single-size text-uppercase">{{ size.number }}</span>
                 </div>
             </div>
             <div class="col-md-5">
@@ -26,11 +26,24 @@ export default {
     name: 'size-variations',
     data() {
         return {
-            sizes: ['36', '37', '38', '39', '40', '41', '42']
+            selectedSize: '36'
+        }
+    },
+    props: {
+        sizes: {
+            type: Array
         }
     },
     components: {
         SizeGuide
+    },
+    methods: {
+        selectShoesSize(size) {
+            if(size.available === true){
+                return this.selectedSize = size.number
+            }
+            return size.number
+        }
     }
 }
 </script>
@@ -54,14 +67,13 @@ export default {
     color: #fff;
     line-height: 2.2;
     cursor: pointer;
-
-    &:first-child {
-        background-color: $main-blue;
-    }
-    &:nth-child(n+4) {
-        background-color: $grey;
-        cursor: not-allowed;
-    }
+}
+.size-selected {
+    background-color: $main-blue;
+}
+.size-disabled {
+    background-color: $grey;
+    cursor: not-allowed;
 }
 .size-guide-link {
     margin-top: 0.5em;

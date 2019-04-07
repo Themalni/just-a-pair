@@ -4,8 +4,8 @@
         <div class="container">
             <h1 class="collection-header">{{ header }}</h1>
             <div class="row collection-items">
-                <product-thumbnail 
-                    v-for="item in newCollection" 
+                <product-thumbnail
+                    v-for="item in newCollection"
                     :key="item.id"
                     v-bind="item">
                 </product-thumbnail>

@@ -5,10 +5,10 @@
             <h1 class="collection-header">{{ header }}</h1>
             <div class="row collection-items">
                 <product-thumbnail v-for="item in products.slice(0, 6)" :key="item.id"
-                        :id="item.id" 
-                        :offer="item.offer" 
+                        :id="item.id"
+                        :offer="item.offer"
                         :title="item.title"
-                        :image="item.image" 
+                        :image="item.image"
                         :price="item.price"
                         :onSale="item.sale"
                         :salePercentage="item.salePercentage">

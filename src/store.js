@@ -24,10 +24,47 @@ export const store = new Vuex.Store({
             sliderImages: [
                 '../assets/sneakers.jpg',
                 '../assets/sneakers.jpg',
-                '../assets/sneakers.jpg' 
+                '../assets/sneakers.jpg'
             ],
             sale: true,
-            productRating: "4"
+            productRating: "4",
+            sizes: [
+                {
+                    number: '36',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ]
         },
         {
             id: 622,
@@ -42,10 +79,47 @@ export const store = new Vuex.Store({
             sliderImages: [
                 '../assets/shoes_white_1.jpg',
                 '../assets/shoes_white_1.jpg',
-                '../assets/shoes_white_1.jpg' 
+                '../assets/shoes_white_1.jpg'
             ],
             sale: false,
-            productRating: "5"
+            productRating: "5",
+            sizes: [
+                {
+                    number: '36',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ]
         },
         {
             id: 623,
@@ -63,7 +137,44 @@ export const store = new Vuex.Store({
                 '../assets/shoes_red_1.jpg'
             ],
             sale: true,
-            productRating: "5"
+            productRating: "5",
+            sizes: [
+                {
+                    number: '36',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ]
         },
         {
             id: 624,
@@ -81,7 +192,44 @@ export const store = new Vuex.Store({
                 '../assets/shoes_blue_1.jpg'
             ],
             sale: false,
-            productRating: "4"
+            productRating: "4",
+            sizes: [
+                {
+                    number: '36',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ]
         },
         {
             id: 625,
@@ -99,7 +247,44 @@ export const store = new Vuex.Store({
                 '../assets/shoes_black_1.jpg'
             ],
             sale: true,
-            productRating: "4"
+            productRating: "4",
+            sizes: [
+                {
+                    number: '36',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ]
         },
         {
             id: 626,
@@ -117,7 +302,44 @@ export const store = new Vuex.Store({
                 '../assets/shoes_grey_1.jpg'
             ],
             sale: false,
-            productRating: "5"
+            productRating: "5",
+            sizes: [
+                {
+                    number: '36',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ],
         },
         {
             id: 627,
@@ -135,7 +357,44 @@ export const store = new Vuex.Store({
                 '../assets/shoes_3.jpg'
             ],
             sale: false,
-            productRating: "5"
+            productRating: "5",
+            sizes: [
+                {
+                    number: '36',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '37',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '38',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '39',
+                    available: false,
+                    selected: false
+                },
+                {
+                    number: '40',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '41',
+                    available: true,
+                    selected: false
+                },
+                {
+                    number: '42',
+                    available: false,
+                    selected: false
+                }
+            ]
         }
     ],
     gridImages: [
