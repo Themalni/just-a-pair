@@ -25,7 +25,7 @@
                             </th>
                             <td>{{ item.title }}</td>
                             <td>{{ item.color }}</td>
-                            <td>{{ item.size }}</td>
+                            <td>{{ item.size.number }}</td>
                             <td>${{ item.price }}</td>
                             <td scope="col">
                                 <button class="btn light-blue btn-sm btn-remove" @click="removeFromCart(index)">X</button>

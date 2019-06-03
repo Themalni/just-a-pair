@@ -288,7 +288,7 @@ export const store = new Vuex.Store({
         },
         {
             id: 626,
-            offer: "",
+            offer: "New",
             title: "Symphony Light",
             sku: "AB75-36-Grey",
             stock: "in stock",
