@@ -7,12 +7,17 @@
                 </div>
                 <div class="col-md-3 text-right">
                     <button class="btn btn-outline-light newsletter-button mt-3">Subscribe</button>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
 </template>
 
+<script>
+export default {
+    name: 'Newsletter'
+}
+</script>
 
 <style lang="scss" scoped>
 .newsletter {
@@ -28,7 +33,7 @@
     border-color: #fff !important;
 
     @include device-size(xl) {
-        min-width: 250px;    
+        min-width: 250px;
     }
 
     &:hover {
@@ -43,7 +48,7 @@
     color: #fff;
 
     @include device-size(xs, sm) {
-        line-height: 1.4;    
+        line-height: 1.4;
     }
 }
 </style>
