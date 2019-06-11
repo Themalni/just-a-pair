@@ -1,37 +1,34 @@
 <template>
   <div id="app">
-    <app-header/>
-    <cart-view/>
-    <router-view></router-view>
+    <navbar/>
+    <transition name="fade">
+      <router-view/>
+    </transition>
     <app-footer/>
   </div>
 </template>
 
 <script>
-import AppHeader from './components/blocks/Header/AppHeader.vue'
-import AppFooter from './components/blocks/Footer/AppFooter.vue'
-import CartView from './components/CartView.vue'
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default {
-  name: 'app',
-  props: [
-    'id', 
-    'title', 
-    'price', 
-    'image'
-  ],
+  name: "app",
   components: {
-    AppHeader,
-    AppFooter,
-    CartView
+    Navbar,
+    "app-footer": Footer
   }
-}
+};
 </script>
 
 <style lang="scss">
-button {
-    border: 0;
-    background-color: transparent;
-    padding: 0;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="collection" id="product-grid">
+    <div class="collection">
       <div class="container">
         <h1 class="collection-header">{{ header }}</h1>
         <div class="row collection-items">
           <product-thumbnail
-            v-for="item in newCollection"
+            v-for="item in products.slice(0, 6)"
             :key="item.id"
             :id="item.id"
             :offer="item.offer"
@@ -22,25 +22,21 @@
 </template>
 
 <script>
-import ProductThumbnail from "@/components/product/ProductThumbnail";
+import ProductThumbnail from "./ProductThumbnail";
 
 export default {
-  name: "SaleProducts",
-  data() {
-    return {
-      header: "Sale"
-    };
-  },
+  name: "ProductGrid",
   components: {
     ProductThumbnail
   },
+  props: ["header"],
   computed: {
     products() {
       return this.$store.getters.products;
     },
     newCollection: function() {
       return this.products.filter(product => {
-        return product.offer === "Sale";
+        return product.offer === "New";
       });
     }
   }
@@ -52,6 +48,10 @@ export default {
   text-align: center;
   margin-bottom: 4em;
   padding-top: 4em;
+
+  @include device-size(xs, sm) {
+    padding-top: 0;
+  }
 }
 .collection-header {
   color: #333;
