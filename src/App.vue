@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <navbar/>
+    <cart/>
     <transition name="fade">
       <router-view/>
     </transition>
@@ -11,11 +12,13 @@
 <script>
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Cart from "@/components/Cart";
 
 export default {
   name: "app",
   components: {
     Navbar,
+    Cart,
     "app-footer": Footer
   }
 };
