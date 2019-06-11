@@ -70,6 +70,7 @@
 import { mapGetters } from "vuex";
 
 export default {
+  name: "Cart",
   props: ["id", "title", "price", "image", "color", "size"],
   computed: {
     ...mapGetters(["products", "productPreview", "inCart"]),
