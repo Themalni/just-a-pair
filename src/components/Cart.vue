@@ -30,7 +30,7 @@
                   </th>
                   <td>{{ item.title }}</td>
                   <td>{{ item.color }}</td>
-                  <!-- <td>{{ item.size }}</td> -->
+                  <td>{{ item.selectedSize }}</td>
                   <td>${{ item.price }}</td>
                   <td scope="col">
                     <button
@@ -71,9 +71,8 @@ import { mapGetters } from "vuex";
 
 export default {
   name: "Cart",
-  props: ["id", "title", "price", "image", "color", "size"],
   computed: {
-    ...mapGetters(["products", "productPreview", "inCart"]),
+    ...mapGetters(["products", "inCart"]),
     cart() {
       return this.$store.getters.inCart.map(cartItem => {
         return this.$store.getters.products.find(itemToAdd => {

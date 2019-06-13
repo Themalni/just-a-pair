@@ -1,64 +1,47 @@
 <template>
   <div class="col-md-4 col-sm-6">
-    <router-link :to="'/product/' + id" class="product-link">
-      <div class="product-thumbnail pb-2" @click="showProduct(id)">
-        <div v-if="!onSale" class="offer-tag">{{ offer }}</div>
-        <div v-else class="offer-tag" :class="{accent: onSale}">{{ `-${salePercentage}%` }}</div>
+    <router-link :to="'/product/' + product.id" class="product-link">
+      <div class="product-thumbnail pb-2" @click="showProduct(product.id)">
+        <div v-if="!product.sale" class="offer-tag">{{ product.offer }}</div>
+        <div
+          v-else
+          class="offer-tag"
+          :class="{accent: product.sale}"
+        >{{ `-${product.salePercentage}%` }}</div>
         <div class="product-image">
-          <img :src="image">
+          <img :src="product.image">
         </div>
-        <h3 class="fancy-font mt-2 mb-2">{{ title }}</h3>
-        <span class="product-price fancy-font" :class="{ 'sale-price': onSale }">${{ price }}</span>
+        <h3 class="fancy-font mt-2 mb-2">{{ product.title }}</h3>
         <span
-          v-if="onSale"
+          class="product-price fancy-font"
+          :class="{ 'sale-price': product.sale }"
+        >${{ product.price }}</span>
+        <span
+          v-if="product.sale"
           class="product-price fancy-font deep-orange-text"
-        >${{ price | salePrice(salePercentage) }}</span>
+        >${{ product.price | salePrice(product.salePercentage) }}</span>
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapMutations, mapActions } from "vuex";
+
 export default {
   name: "ProductThumbnail",
   props: {
-    id: {
-      type: Number
-    },
-    image: {
-      type: String
-    },
-    offer: {
-      type: String
-    },
-    title: {
-      type: String
-    },
-    price: {
-      type: Number
-    },
-    onSale: {
-      type: Boolean,
-      default: false
-    },
-    salePercentage: {
-      type: [Number, String]
-    },
-    stock: {
-      type: String,
-      default: "in stock"
-    },
-    sliderImages: {
-      type: Array
+    product: {
+      type: Object
     }
   },
   computed: {
-    products() {
-      return this.$store.state.products;
-    }
+    ...mapGetters(["productPreview"])
   },
   methods: {
+    ...mapActions(["clearProductPreview"]),
     showProduct(id) {
+      this.clearProductPreview();
       this.$store.dispatch("showProduct", id);
     }
   }
