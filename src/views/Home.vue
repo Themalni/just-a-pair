@@ -1,22 +1,44 @@
 <template>
   <div class="mt-5">
     <image-grid/>
-    <new-collection/>
-    <sale-products/>
+    <collection header="New Collection">
+      <product-thumbnail v-for="item in newCollection" :key="item.id" :product="item"></product-thumbnail>
+    </collection>
+    <collection header="Sale">
+      <product-thumbnail v-for="item in saleCollection" :key="item.id" :product="item"></product-thumbnail>
+    </collection>
   </div>
 </template>
 
 <script>
 import ImageGrid from "@/components/ImageGrid";
-import NewCollection from "@/components/NewCollection";
-import SaleProducts from "@/components/SaleProducts";
+import Collection from "@/components/Collection";
+import ProductThumbnail from "../components/product/ProductThumbnail";
+
+import { mapGetters } from "vuex";
 
 export default {
   name: "Home",
   components: {
     ImageGrid,
-    NewCollection,
-    SaleProducts
+    Collection,
+    ProductThumbnail
+  },
+  computed: {
+    ...mapGetters(["products"]),
+    productList() {
+      return this.products;
+    },
+    newCollection: function() {
+      return this.productList.filter(product => {
+        return product.offer === "New";
+      });
+    },
+    saleCollection: function() {
+      return this.productList.filter(product => {
+        return product.offer === "Sale";
+      });
+    }
   }
 };
 </script>

@@ -4,35 +4,35 @@
       <div class="product">
         <div class="container">
           <breadcrumbs/>
-          <div class="row" v-for="(item, index) in displaySingleProduct" :key="index">
+          <div class="row" v-for="(product, key) in productList" :key="key">
             <div class="col-md-7">
-              <carousel :image="item.image" :sliderImages="item.sliderImages"/>
+              <carousel :image="product.image" :sliderImages="product.sliderImages"/>
             </div>
             <div class="col-md-5">
-              <h1 class="product-name">{{ item.title }}</h1>
+              <h1 class="product-name">{{ product.title }}</h1>
               <rating/>
               <div class="row no-gutters">
                 <div class="col-md-5">
-                  <div class="product-id text-uppercase">sku: {{ item.sku }}</div>
+                  <div class="product-id text-uppercase">sku: {{ product.sku }}</div>
                 </div>
                 <div class="col-md-7">
                   <div
                     class="product-stock font-bold"
-                    :class="{'deep-orange-text': item.stock === 'out of stock'}"
-                  >{{ item.stock }}</div>
+                    :class="{'deep-orange-text': product.stock === 'out of stock'}"
+                  >{{ product.stock }}</div>
                 </div>
               </div>
               <div
-                v-if="item.sale"
+                v-if="product.sale"
                 class="product-price fancy-font deep-orange-text mb-3"
-              >${{ item.price | salePrice(item.salePercentage) }}</div>
-              <div v-else class="product-price mb-3">${{ item.price }}</div>
-              <size-variations :sizes="item.sizes" @selectedSize="setSelectedSize($event)"/>
+              >${{ product.price | salePrice(product.salePercentage) }}</div>
+              <div v-else class="product-price mb-3">${{ product.price }}</div>
+              <size-variations :sizes="product.sizes"/>
               <button
                 class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
-                :class="{disabled: item.stock == 'out of stock'}"
-                @click="addToCart(item)"
-                :disabled="item.stock === 'out of stock'"
+                :class="{disabled: product.stock == 'out of stock'}"
+                @click="addToCart(product.id)"
+                :disabled="product.stock === 'out of stock'"
               >Add to cart</button>
             </div>
           </div>
@@ -40,7 +40,9 @@
       </div>
     </transition>
     <product-details/>
-    <product-grid :header="similarProductsHeader"/>
+    <collection header="You might also like">
+      <product-thumbnail v-for="item in suggestions" :key="item.id" :product="item"></product-thumbnail>
+    </collection>
     <offer/>
   </div>
 </template>
@@ -52,17 +54,13 @@ import Carousel from "@/components/Carousel";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ProductDetails from "@/components/product/ProductDetails";
 import Offer from "@/components/Offer";
-import ProductGrid from "@/components/product/ProductGrid";
+import Collection from "@/components/Collection";
+import ProductThumbnail from "../components/product/ProductThumbnail";
 
 import { mapGetters } from "vuex";
 
 export default {
   name: "Product",
-  data() {
-    return {
-      similarProductsHeader: "You might also like"
-    };
-  },
   components: {
     Rating,
     SizeVariations,
@@ -70,33 +68,20 @@ export default {
     Breadcrumbs,
     ProductDetails,
     Offer,
-    ProductGrid
+    Collection,
+    ProductThumbnail
   },
-  props: [
-    "id",
-    "image",
-    "offer",
-    "title",
-    "price",
-    "sku",
-    "color",
-    "stock",
-    "onSale",
-    "salePercentage",
-    "productRating"
-  ],
-
   computed: {
-    ...mapGetters(["products", "productPreview", "displaySingleProduct"]),
-    singleProduct() {
-      return this.$store.getters.productPreview.map(productPreviewItem => {
-        return this.$store.getters.products.find(itemToPreview => {
+    ...mapGetters(["products", "productPreview"]),
+    productList() {
+      return this.productPreview.map(productPreviewItem => {
+        return this.products.find(itemToPreview => {
           return productPreviewItem === itemToPreview.id;
         });
       });
     },
-    displaySingleProduct() {
-      return this.singleProduct.slice(this.singleProduct.length - 1);
+    suggestions() {
+      return this.products.slice(0, 6);
     }
   },
   methods: {

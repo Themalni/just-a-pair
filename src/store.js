@@ -404,8 +404,7 @@ export const store = new Vuex.Store({
             ]
         }],
         inCart: [],
-        productPreview: [],
-        displaySingleProduct: []
+        productPreview: []
     },
     getters: {
         products: state => state.products,
@@ -415,14 +414,15 @@ export const store = new Vuex.Store({
         sizeGuideChildren: state => state.sizeGuideChildren,
         inCart: state => state.inCart,
         productPreview: state => state.productPreview,
-        displaySingleProduct: state => state.displaySingleProduct
     },
     mutations: {
+        CLEAR_PRODUCT_PREVIEW(state) { state.productPreview = [] },
         SHOW_PRODUCT(state, id) { state.productPreview.push(id); },
         ADD_TO_CART(state, id) { state.inCart.push(id); },
         REMOVE_FROM_CART(state, index) { state.inCart.splice(index, 1); }
     },
     actions: {
+        clearProductPreview(context) { context.commit('CLEAR_PRODUCT_PREVIEW') },
         showProduct(context, id) { context.commit('SHOW_PRODUCT', id); },
         addToCart(context, id) { context.commit('ADD_TO_CART', id); },
         removeFromCart(context, index) { context.commit('REMOVE_FROM_CART', index); }
