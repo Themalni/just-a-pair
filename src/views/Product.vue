@@ -85,8 +85,13 @@ export default {
     }
   },
   methods: {
-    addToCart(id) {
-      this.$store.dispatch("addToCart", id);
+    addToCart(item) {
+      this.$store.dispatch("addToCart", item);
+    },
+    setSelectedSize(size) {
+      this.displaySingleProduct.map(item => {
+        item.selectedSize = size;
+      });
     }
   }
 };

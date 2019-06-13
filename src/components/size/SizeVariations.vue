@@ -56,14 +56,12 @@ export default {
   },
   methods: {
     selectShoesSize(size) {
+      this.$emit("selectedSize", size.number);
       if (size.available === true) {
         return (this.selectedSize = size.number);
       }
       return size.number;
     }
-    // defaultSize() {
-    //   this.firstAvailableSize = size;
-    // }
   }
 };
 </script>
