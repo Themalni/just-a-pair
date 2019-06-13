@@ -4,7 +4,7 @@
       <div class="container">
         <h1 class="collection-header">{{ header }}</h1>
         <div class="row collection-items">
-          <product-thumbnail v-for="item in newCollection" :key="item.id" v-bind="item"></product-thumbnail>
+          <slot></slot>
         </div>
       </div>
     </div>
@@ -12,26 +12,11 @@
 </template>
 
 <script>
-import ProductThumbnail from "../components/product/ProductThumbnail";
-
 export default {
-  name: "NewCollection",
-  data() {
-    return {
-      header: "New Collection"
-    };
-  },
-  components: {
-    ProductThumbnail
-  },
-  computed: {
-    products() {
-      return this.$store.getters.products;
-    },
-    newCollection: function() {
-      return this.products.filter(product => {
-        return product.offer === "New";
-      });
+  name: "Collection",
+  props: {
+    header: {
+      type: String
     }
   }
 };
