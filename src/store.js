@@ -4,9 +4,7 @@ import VuexPersist from 'vuex-persist'
 
 Vue.use(Vuex);
 
-const vuexLocalStorage = new VuexPersist({
-    storage: localStorage
-})
+const vuexLocalStorage = new VuexPersist({ storage: localStorage })
 
 export const store = new Vuex.Store({
     state: {
@@ -27,40 +25,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: true,
                 productRating: "4",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '37',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '38',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '39',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '40',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '41',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ]
             },
@@ -81,40 +73,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: false,
                 productRating: "5",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '37',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '38',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '39',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '40',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '41',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ]
             },
@@ -135,40 +121,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: true,
                 productRating: "5",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '37',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '38',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '39',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '40',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '41',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ]
             },
@@ -189,40 +169,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: false,
                 productRating: "4",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '37',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '38',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '39',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '40',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '41',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ]
             },
@@ -243,40 +217,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: true,
                 productRating: "4",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '37',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '38',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '39',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '40',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '41',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ]
             },
@@ -297,40 +265,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: false,
                 productRating: "5",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '37',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '38',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '39',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '40',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '41',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ],
             },
@@ -351,40 +313,34 @@ export const store = new Vuex.Store({
                 ],
                 sale: false,
                 productRating: "5",
+                selectedSize: '',
                 sizes: [{
                         number: '36',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '37',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '38',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '39',
-                        available: false,
-                        selected: false
+                        available: false
                     },
                     {
                         number: '40',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '41',
-                        available: true,
-                        selected: false
+                        available: true
                     },
                     {
                         number: '42',
-                        available: false,
-                        selected: false
+                        available: false
                     }
                 ]
             }

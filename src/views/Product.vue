@@ -27,11 +27,11 @@
                 class="product-price fancy-font deep-orange-text mb-3"
               >${{ item.price | salePrice(item.salePercentage) }}</div>
               <div v-else class="product-price mb-3">${{ item.price }}</div>
-              <size-variations :sizes="item.sizes"/>
+              <size-variations :sizes="item.sizes" @selectedSize="setSelectedSize($event)"/>
               <button
                 class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
                 :class="{disabled: item.stock == 'out of stock'}"
-                @click="addToCart(item.id)"
+                @click="addToCart(item)"
                 :disabled="item.stock === 'out of stock'"
               >Add to cart</button>
             </div>
@@ -100,8 +100,13 @@ export default {
     }
   },
   methods: {
-    addToCart(id) {
-      this.$store.dispatch("addToCart", id);
+    addToCart(item) {
+      this.$store.dispatch("addToCart", item);
+    },
+    setSelectedSize(size) {
+      this.displaySingleProduct.map(item => {
+        item.selectedSize = size;
+      });
     }
   }
 };
