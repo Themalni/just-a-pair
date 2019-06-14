@@ -1,4 +1,4 @@
-<h1 align="center">Just A Pair</h1>
+<h1 align="center">Just A Pair (WIP)</h1>
 <h2 align="center">Online shoe store</h2>
 <h2 align="center">Made with Vue + Vuex</h2>
 <p align="center">Live preview: <a href="https://just-a-pair.firebaseapp.com/">Just A Pair</a></p><br>
