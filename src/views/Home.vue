@@ -2,7 +2,7 @@
   <div class="mt-5">
     <image-grid/>
     <collection header="New Collection">
-      <product-thumbnail v-for="item in newCollection" :key="item.id" :product="item"></product-thumbnail>
+      <product-thumbnail v-for="item in showThreeProducts" :key="item.id" :product="item"></product-thumbnail>
     </collection>
     <collection header="Sale">
       <product-thumbnail v-for="item in saleCollection" :key="item.id" :product="item"></product-thumbnail>
@@ -33,6 +33,9 @@ export default {
       return this.productList.filter(product => {
         return product.offer === "New";
       });
+    },
+    showThreeProducts: function() {
+      return this.newCollection.slice(0, 3);
     },
     saleCollection: function() {
       return this.productList.filter(product => {
