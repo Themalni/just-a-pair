@@ -15,12 +15,12 @@
             <table class="table">
               <thead class="main-blue white-text">
                 <tr>
-                  <th scope="col">Image</th>
-                  <th scope="col">Title</th>
-                  <th scope="col">Color</th>
-                  <th scope="col">Size</th>
-                  <th scope="col">Price</th>
-                  <th scope="col">Remove</th>
+                  <th scope="col" class="narrow-col">Image</th>
+                  <th scope="col" class="wide-col">Title</th>
+                  <th scope="col" class="narrow-col">Color</th>
+                  <th scope="col" class="narrow-col">Size</th>
+                  <th scope="col" class="narrow-col">Price</th>
+                  <th scope="col" class="narrow-col">Remove</th>
                 </tr>
               </thead>
               <tbody name="fade">
@@ -42,7 +42,7 @@
               </tbody>
               <tfoot>
                 <tr v-show="total > 0">
-                  <th id="total" colspan="3" class="text-right">Total:</th>
+                  <th id="total" colspan="4" class="text-right">Total:</th>
                   <td colspan="2">${{ total }}</td>
                 </tr>
                 <tr v-show="total === 0">
@@ -97,14 +97,19 @@ export default {
   @include device-size(xs) {
     padding: 0;
   }
+  @include device-size(xs, sm) {
+    overflow: scroll;
+  }
 }
 .modal-dialog {
   @include device-size(xs) {
     margin: 0;
   }
 }
-.btn-remove {
-  padding: 5px 10px;
+.btn {
+  &.btn-remove {
+    padding: 0.55em 1em;
+  }
 }
 .cart-item-img {
   width: 80px;
@@ -112,6 +117,12 @@ export default {
 }
 .table {
   transition: 0.3s linear;
+  overflow: auto;
+
+  @include device-size(lg, xl) {
+    table-layout: fixed;
+    width: 100%;
+  }
 
   td {
     vertical-align: middle;
@@ -135,6 +146,16 @@ export default {
       font-weight: bold;
       font-size: 1.4em;
       color: #444;
+    }
+  }
+  .wide-col {
+    @include device-size(lg, xl) {
+      width: 40%;
+    }
+  }
+  .narrow-col {
+    @include device-size(lg, xl) {
+      width: 10%;
     }
   }
 }
