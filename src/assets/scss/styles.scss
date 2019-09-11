@@ -1,27 +1,44 @@
 @import './vars';
+@import './text';
 
 .main-blue {
     background-color: $main-blue;
 }
+
 .light-blue {
     background-color: $light-blue;
 }
+
 .orange-accent {
     background-color: $orange-accent;
 }
-.fade-enter-active, 
+
+.fade-enter-active,
 .fade-leave-active {
     transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter,
+.fade-leave-to {
     opacity: 0;
 }
+
 .fancy-font {
     font-family: 'Playfair Display', serif;
 }
+
 .btn-lg {
     font-size: 1.3em;
 }
+
+.button-reset {
+    background: transparent;
+    padding: 0;
+    border: 0;
+    color: unset;
+    cursor: pointer;
+}
+
 .button-accent {
     background-color: $orange-accent;
     color: #fff;
@@ -31,6 +48,14 @@
         cursor: pointer;
     }
 }
+
 .disabled {
     filter: grayscale(20%);
+}
+
+.md-icon {
+  &.icon-sm {
+    font-size: 16px !important;
+    justify-content: left;
+  }
 }

@@ -27,11 +27,11 @@
                 class="product-price fancy-font deep-orange-text mb-3"
               >${{ product.price | salePrice(product.salePercentage) }}</div>
               <div v-else class="product-price mb-3">${{ product.price }}</div>
-              <size-variations :sizes="product.sizes"/>
+              <size-variations :sizes="product.sizes" @selectedSize="setSelectedSize($event)"/>
               <button
                 class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
                 :class="{disabled: product.stock == 'out of stock'}"
-                @click="addToCart(product.id)"
+                @click="addToCart(product)"
                 :disabled="product.stock === 'out of stock'"
               >Add to cart</button>
             </div>
@@ -57,7 +57,7 @@ import Offer from "@/components/Offer";
 import Collection from "@/components/Collection";
 import ProductThumbnail from "../components/product/ProductThumbnail";
 
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Product",
@@ -74,24 +74,28 @@ export default {
   computed: {
     ...mapGetters(["products", "productPreview"]),
     productList() {
-      return this.productPreview.map(productPreviewItem => {
-        return this.products.find(itemToPreview => {
-          return productPreviewItem === itemToPreview.id;
-        });
-      });
+      // return this.productPreview.map(productPreviewItem => {
+      //   return this.products.find(itemToPreview => {
+      //     return productPreviewItem === itemToPreview.id;
+      //   });
+      // });
+      return this.productPreview;
     },
     suggestions() {
       return this.products.slice(0, 6);
     }
   },
   methods: {
-    addToCart(item) {
-      this.$store.dispatch("addToCart", item);
+    ...mapActions(["setProductSelectedSize"]),
+    addToCart(product) {
+      this.$store.dispatch("addToCart", product);
     },
     setSelectedSize(size) {
-      this.displaySingleProduct.map(item => {
-        item.selectedSize = size;
-      });
+      // this.productList.map(item => {
+      //   item.selectedSize = size;
+      // });
+      this.$store.dispatch("setProductSelectedSize", size);
+      console.log("Set size:", size);
     }
   }
 };

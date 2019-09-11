@@ -1,12 +1,13 @@
 <template>
   <div class="mt-5">
-    <image-grid/>
+    <image-grid />
     <collection header="New Collection">
       <product-thumbnail v-for="item in showThreeProducts" :key="item.id" :product="item"></product-thumbnail>
     </collection>
     <collection header="Sale">
       <product-thumbnail v-for="item in saleCollection" :key="item.id" :product="item"></product-thumbnail>
     </collection>
+    <app-footer />
   </div>
 </template>
 
@@ -14,6 +15,7 @@
 import ImageGrid from "@/components/ImageGrid";
 import Collection from "@/components/Collection";
 import ProductThumbnail from "../components/product/ProductThumbnail";
+import Footer from "@/components/Footer";
 
 import { mapGetters } from "vuex";
 
@@ -22,7 +24,8 @@ export default {
   components: {
     ImageGrid,
     Collection,
-    ProductThumbnail
+    ProductThumbnail,
+    "app-footer": Footer
   },
   computed: {
     ...mapGetters(["products"]),

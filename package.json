@@ -12,6 +12,7 @@
     "mdbootstrap": "^4.5.9",
     "mdbvue": "^4.7.0",
     "vue": "^2.5.17",
+    "vue-click-outside": "^1.0.7",
     "vue-material": "^1.0.0-beta-10.2",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.1",

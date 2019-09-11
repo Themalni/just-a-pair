@@ -74,11 +74,12 @@ export default {
   computed: {
     ...mapGetters(["products", "inCart"]),
     cart() {
-      return this.$store.getters.inCart.map(cartItem => {
-        return this.$store.getters.products.find(itemToAdd => {
-          return cartItem === itemToAdd.id;
-        });
-      });
+      // return this.$store.getters.inCart.map(cartItem => {
+      //   return this.$store.getters.products.find(itemToAdd => {
+      //     return cartItem === itemToAdd.id;
+      //   });
+      // });
+      return this.inCart;
     },
     total() {
       return this.cart.reduce((acc, cur) => acc + cur.price, 0);

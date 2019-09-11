@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-4 col-sm-6">
     <router-link :to="'/product/' + product.id" class="product-link">
-      <div class="product-thumbnail pb-2" @click="showProduct(product.id)">
+      <div class="product-thumbnail pb-2" @click="showProduct()">
         <div v-if="!product.sale" class="offer-tag">{{ product.offer }}</div>
         <div
           v-else
@@ -40,9 +40,9 @@ export default {
   },
   methods: {
     ...mapActions(["clearProductPreview"]),
-    showProduct(id) {
+    showProduct() {
       this.clearProductPreview();
-      this.$store.dispatch("showProduct", id);
+      this.$store.dispatch("showProduct", this.product);
     }
   }
 };
