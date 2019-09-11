@@ -1,10 +1,7 @@
 <template>
   <div>
     <div class="size-variations pt-2">
-      <p class="size-name">
-        Size
-        <span class="accent font-weight-bold text-uppercase">{{ selectedSize }}</span>
-      </p>
+      <p class="size-name font-weight-bold">Sizes</p>
       <div class="row">
         <div class="col-md-7">
           <div
@@ -32,6 +29,12 @@
       </div>
     </div>
     <size-guide/>
+    <transition name="fade">
+      <p v-if="selectedSize.length > 0">
+        Selected size:
+        <span class="accent font-weight-bold">{{ selectedSize }}</span>
+      </p>
+    </transition>
   </div>
 </template>
 
@@ -42,7 +45,7 @@ export default {
   name: "SizeVariations",
   data() {
     return {
-      selectedSize: "36",
+      selectedSize: "",
       firstAvailableSize: ""
     };
   },
@@ -68,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .size-name {
-  font-size: 1.2em;
+  font-size: 1.4em;
 
   .accent {
     color: #333;

@@ -2,11 +2,14 @@
 $light-grey: #f2f2f2;
 $grey: #ccc;
 $dark-grey: #666;
+$graphite: #20252d;
 $orange-accent: #ff5722;
 $main-blue: #0099CC;
 $light-blue: #33b5e5;
+$dark-blue: #005580;
 
 //Fonts
-$fancy-font: 'Noto Serif KR', sans-serif;
+$fancy-font: 'Noto Serif KR',
+sans-serif;
 
 @import './mixins';

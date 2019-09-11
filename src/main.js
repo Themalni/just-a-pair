@@ -6,6 +6,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbvue/build/css/mdb.css'
 import { store } from './store'
 import filters from './filters'
+import firebaseAuth from './firebaseAuth'
 
 Vue.config.productionTip = false
 
@@ -17,11 +18,12 @@ import 'vue-material/dist/vue-material.min.css'
 
 Vue.use(VueResource)
 Vue.use(VueMaterial)
+Vue.use(firebaseAuth)
 
 
 new Vue({
-    store,
-    router,
-    filters,
-    render: h => h(App)
+  store,
+  router,
+  filters,
+  render: h => h(App)
 }).$mount('#app')

@@ -1,25 +1,22 @@
 <template>
   <div id="app">
-    <navbar/>
-    <cart/>
+    <navbar />
+    <cart />
     <transition name="fade">
-      <router-view/>
+      <router-view />
     </transition>
-    <app-footer/>
   </div>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Cart from "@/components/Cart";
 
 export default {
   name: "app",
   components: {
     Navbar,
-    Cart,
-    "app-footer": Footer
+    Cart
   }
 };
 </script>
