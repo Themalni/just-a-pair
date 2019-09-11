@@ -9,357 +9,357 @@ const vuexLocalStorage = new VuexPersist({ storage: localStorage })
 export const store = new Vuex.Store({
     state: {
         products: [{
-                id: 621,
-                offer: "Sale",
-                title: "Be Yourself",
-                sku: "AK55-36-Blue",
-                stock: "in stock",
-                price: 89,
-                salePercentage: 65,
-                color: "Blue",
-                image: '../assets/sneakers.jpg',
-                sliderImages: [
-                    '../assets/sneakers.jpg',
-                    '../assets/sneakers.jpg',
-                    '../assets/sneakers.jpg'
-                ],
-                sale: true,
-                productRating: "4",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: true
-                    },
-                    {
-                        number: '37',
-                        available: true
-                    },
-                    {
-                        number: '38',
-                        available: true
-                    },
-                    {
-                        number: '39',
-                        available: true
-                    },
-                    {
-                        number: '40',
-                        available: true
-                    },
-                    {
-                        number: '41',
-                        available: true
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ]
+            id: 621,
+            offer: "Sale",
+            title: "Be Yourself",
+            sku: "AK55-36-Blue",
+            stock: "in stock",
+            price: 89,
+            salePercentage: 65,
+            color: "Blue",
+            image: '../assets/sneakers.jpg',
+            sliderImages: [
+                '../assets/sneakers.jpg',
+                '../assets/sneakers.jpg',
+                '../assets/sneakers.jpg'
+            ],
+            sale: true,
+            productRating: "4",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: true
             },
             {
-                id: 622,
-                offer: "New",
-                title: "Star Gazers",
-                sku: "AL33-36-White",
-                stock: "in stock",
-                price: 139,
-                salePercentage: '',
-                color: "White",
-                image: '../assets/shoes_white_1.jpg',
-                sliderImages: [
-                    '../assets/shoes_white_1.jpg',
-                    '../assets/shoes_white_1.jpg',
-                    '../assets/shoes_white_1.jpg'
-                ],
-                sale: false,
-                productRating: "5",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: true
-                    },
-                    {
-                        number: '37',
-                        available: true
-                    },
-                    {
-                        number: '38',
-                        available: true
-                    },
-                    {
-                        number: '39',
-                        available: true
-                    },
-                    {
-                        number: '40',
-                        available: false
-                    },
-                    {
-                        number: '41',
-                        available: true
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ]
+                number: '37',
+                available: true
             },
             {
-                id: 623,
-                offer: "Sale",
-                title: "Millenium Night",
-                sku: "AJ11-36-Red",
-                stock: "in stock",
-                price: 99,
-                salePercentage: 15,
-                color: "Red",
-                image: '../assets/shoes_red_1.jpg',
-                sliderImages: [
-                    '../assets/shoes_red_1.jpg',
-                    '../assets/shoes_red_1.jpg',
-                    '../assets/shoes_red_1.jpg'
-                ],
-                sale: true,
-                productRating: "5",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: true
-                    },
-                    {
-                        number: '37',
-                        available: false
-                    },
-                    {
-                        number: '38',
-                        available: true
-                    },
-                    {
-                        number: '39',
-                        available: true
-                    },
-                    {
-                        number: '40',
-                        available: true
-                    },
-                    {
-                        number: '41',
-                        available: true
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ]
+                number: '38',
+                available: true
             },
             {
-                id: 624,
-                offer: "New",
-                title: "Be Diva Stillettos",
-                sku: "AJ11-36-Blue",
-                stock: "out of stock",
-                price: 84,
-                salePercentage: '',
-                color: "Blue",
-                image: '../assets/shoes_blue_1.jpg',
-                sliderImages: [
-                    '../assets/shoes_blue_1.jpg',
-                    '../assets/shoes_blue_1.jpg',
-                    '../assets/shoes_blue_1.jpg'
-                ],
-                sale: false,
-                productRating: "4",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: true
-                    },
-                    {
-                        number: '37',
-                        available: true
-                    },
-                    {
-                        number: '38',
-                        available: true
-                    },
-                    {
-                        number: '39',
-                        available: false
-                    },
-                    {
-                        number: '40',
-                        available: true
-                    },
-                    {
-                        number: '41',
-                        available: true
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ]
+                number: '39',
+                available: true
             },
             {
-                id: 625,
-                offer: "Sale",
-                title: "Solarine",
-                sku: "AG23-36-Black",
-                stock: "out of stock",
-                price: 249,
-                salePercentage: 70,
-                color: "Black",
-                image: '../assets/shoes_black_1.jpg',
-                sliderImages: [
-                    '../assets/shoes_black_1.jpg',
-                    '../assets/shoes_black_1.jpg',
-                    '../assets/shoes_black_1.jpg'
-                ],
-                sale: true,
-                productRating: "4",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: true
-                    },
-                    {
-                        number: '37',
-                        available: true
-                    },
-                    {
-                        number: '38',
-                        available: false
-                    },
-                    {
-                        number: '39',
-                        available: true
-                    },
-                    {
-                        number: '40',
-                        available: true
-                    },
-                    {
-                        number: '41',
-                        available: false
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ]
+                number: '40',
+                available: true
             },
             {
-                id: 626,
-                offer: "New",
-                title: "Symphony Light",
-                sku: "AB75-36-Grey",
-                stock: "in stock",
-                price: 129,
-                salePercentage: '',
-                color: "Grey",
-                image: '../assets/shoes_grey_1.jpg',
-                sliderImages: [
-                    '../assets/shoes_grey_1.jpg',
-                    '../assets/shoes_grey_1.jpg',
-                    '../assets/shoes_grey_1.jpg'
-                ],
-                sale: false,
-                productRating: "5",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: false
-                    },
-                    {
-                        number: '37',
-                        available: false
-                    },
-                    {
-                        number: '38',
-                        available: true
-                    },
-                    {
-                        number: '39',
-                        available: true
-                    },
-                    {
-                        number: '40',
-                        available: true
-                    },
-                    {
-                        number: '41',
-                        available: true
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ],
+                number: '41',
+                available: true
             },
             {
-                id: 627,
-                offer: "New",
-                title: "Summer walk",
-                sku: "AF18-36-Olive",
-                stock: "in stock",
-                price: 79,
-                salePercentage: '',
-                color: 'Olive',
-                image: '../assets/shoes_1.jpg',
-                sliderImages: [
-                    '../assets/shoes_1.jpg',
-                    '../assets/shoes_2.jpg',
-                    '../assets/shoes_3.jpg'
-                ],
-                sale: false,
-                productRating: "5",
-                selectedSize: '',
-                sizes: [{
-                        number: '36',
-                        available: true
-                    },
-                    {
-                        number: '37',
-                        available: true
-                    },
-                    {
-                        number: '38',
-                        available: false
-                    },
-                    {
-                        number: '39',
-                        available: false
-                    },
-                    {
-                        number: '40',
-                        available: true
-                    },
-                    {
-                        number: '41',
-                        available: true
-                    },
-                    {
-                        number: '42',
-                        available: false
-                    }
-                ]
+                number: '42',
+                available: false
             }
+            ]
+        },
+        {
+            id: 622,
+            offer: "New",
+            title: "Star Gazers",
+            sku: "AL33-36-White",
+            stock: "in stock",
+            price: 139,
+            salePercentage: '',
+            color: "White",
+            image: '../assets/shoes_white_1.jpg',
+            sliderImages: [
+                '../assets/shoes_white_1.jpg',
+                '../assets/shoes_white_1.jpg',
+                '../assets/shoes_white_1.jpg'
+            ],
+            sale: false,
+            productRating: "5",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: true
+            },
+            {
+                number: '37',
+                available: true
+            },
+            {
+                number: '38',
+                available: true
+            },
+            {
+                number: '39',
+                available: true
+            },
+            {
+                number: '40',
+                available: false
+            },
+            {
+                number: '41',
+                available: true
+            },
+            {
+                number: '42',
+                available: false
+            }
+            ]
+        },
+        {
+            id: 623,
+            offer: "Sale",
+            title: "Millenium Night",
+            sku: "AJ11-36-Red",
+            stock: "in stock",
+            price: 99,
+            salePercentage: 15,
+            color: "Red",
+            image: '../assets/shoes_red_1.jpg',
+            sliderImages: [
+                '../assets/shoes_red_1.jpg',
+                '../assets/shoes_red_1.jpg',
+                '../assets/shoes_red_1.jpg'
+            ],
+            sale: true,
+            productRating: "5",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: true
+            },
+            {
+                number: '37',
+                available: false
+            },
+            {
+                number: '38',
+                available: true
+            },
+            {
+                number: '39',
+                available: true
+            },
+            {
+                number: '40',
+                available: true
+            },
+            {
+                number: '41',
+                available: true
+            },
+            {
+                number: '42',
+                available: false
+            }
+            ]
+        },
+        {
+            id: 624,
+            offer: "New",
+            title: "Be Diva Stillettos",
+            sku: "AJ11-36-Blue",
+            stock: "out of stock",
+            price: 84,
+            salePercentage: '',
+            color: "Blue",
+            image: '../assets/shoes_blue_1.jpg',
+            sliderImages: [
+                '../assets/shoes_blue_1.jpg',
+                '../assets/shoes_blue_1.jpg',
+                '../assets/shoes_blue_1.jpg'
+            ],
+            sale: false,
+            productRating: "4",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: true
+            },
+            {
+                number: '37',
+                available: true
+            },
+            {
+                number: '38',
+                available: true
+            },
+            {
+                number: '39',
+                available: false
+            },
+            {
+                number: '40',
+                available: true
+            },
+            {
+                number: '41',
+                available: true
+            },
+            {
+                number: '42',
+                available: false
+            }
+            ]
+        },
+        {
+            id: 625,
+            offer: "Sale",
+            title: "Solarine",
+            sku: "AG23-36-Black",
+            stock: "out of stock",
+            price: 249,
+            salePercentage: 70,
+            color: "Black",
+            image: '../assets/shoes_black_1.jpg',
+            sliderImages: [
+                '../assets/shoes_black_1.jpg',
+                '../assets/shoes_black_1.jpg',
+                '../assets/shoes_black_1.jpg'
+            ],
+            sale: true,
+            productRating: "4",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: true
+            },
+            {
+                number: '37',
+                available: true
+            },
+            {
+                number: '38',
+                available: false
+            },
+            {
+                number: '39',
+                available: true
+            },
+            {
+                number: '40',
+                available: true
+            },
+            {
+                number: '41',
+                available: false
+            },
+            {
+                number: '42',
+                available: false
+            }
+            ]
+        },
+        {
+            id: 626,
+            offer: "New",
+            title: "Symphony Light",
+            sku: "AB75-36-Grey",
+            stock: "in stock",
+            price: 129,
+            salePercentage: '',
+            color: "Grey",
+            image: '../assets/shoes_grey_1.jpg',
+            sliderImages: [
+                '../assets/shoes_grey_1.jpg',
+                '../assets/shoes_grey_1.jpg',
+                '../assets/shoes_grey_1.jpg'
+            ],
+            sale: false,
+            productRating: "5",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: false
+            },
+            {
+                number: '37',
+                available: false
+            },
+            {
+                number: '38',
+                available: true
+            },
+            {
+                number: '39',
+                available: true
+            },
+            {
+                number: '40',
+                available: true
+            },
+            {
+                number: '41',
+                available: true
+            },
+            {
+                number: '42',
+                available: false
+            }
+            ],
+        },
+        {
+            id: 627,
+            offer: "New",
+            title: "Summer walk",
+            sku: "AF18-36-Olive",
+            stock: "in stock",
+            price: 79,
+            salePercentage: '',
+            color: 'Olive',
+            image: '../assets/shoes_1.jpg',
+            sliderImages: [
+                '../assets/shoes_1.jpg',
+                '../assets/shoes_2.jpg',
+                '../assets/shoes_3.jpg'
+            ],
+            sale: false,
+            productRating: "5",
+            selectedSize: '',
+            sizes: [{
+                number: '36',
+                available: true
+            },
+            {
+                number: '37',
+                available: true
+            },
+            {
+                number: '38',
+                available: false
+            },
+            {
+                number: '39',
+                available: false
+            },
+            {
+                number: '40',
+                available: true
+            },
+            {
+                number: '41',
+                available: true
+            },
+            {
+                number: '42',
+                available: false
+            }
+            ]
+        }
         ],
         gridImages: [{
-                image: '../assets/women_shoes.jpg',
-                header: "Women Collection",
-                button: "Buy now"
-            },
-            {
-                image: '../assets/men_shoes.jpg',
-                header: "Men Collection",
-                button: "Buy now"
-            },
-            {
-                image: '../assets/children_shoes.jpg',
-                header: "Children Collection",
-                button: "Buy now"
-            }
+            image: '../assets/women_shoes.jpg',
+            header: "Women Collection",
+            button: "Buy now"
+        },
+        {
+            image: '../assets/men_shoes.jpg',
+            header: "Men Collection",
+            button: "Buy now"
+        },
+        {
+            image: '../assets/children_shoes.jpg',
+            header: "Children Collection",
+            button: "Buy now"
+        }
         ],
         sizeGuideMen: [{
             USA: [
@@ -404,7 +404,8 @@ export const store = new Vuex.Store({
             ]
         }],
         inCart: [],
-        productPreview: []
+        productPreview: [],
+        user: null
     },
     getters: {
         products: state => state.products,
@@ -414,18 +415,22 @@ export const store = new Vuex.Store({
         sizeGuideChildren: state => state.sizeGuideChildren,
         inCart: state => state.inCart,
         productPreview: state => state.productPreview,
+        user: state => state.user
     },
     mutations: {
         CLEAR_PRODUCT_PREVIEW(state) { state.productPreview = [] },
-        SHOW_PRODUCT(state, id) { state.productPreview.push(id); },
-        ADD_TO_CART(state, id) { state.inCart.push(id); },
-        REMOVE_FROM_CART(state, index) { state.inCart.splice(index, 1); }
+        SHOW_PRODUCT(state, payload) { state.productPreview.push(payload) },
+        SET_PRODUCT_SELECTED_SIZE(state, payload) { state.productPreview.map(product => product.selectedSize = payload) },
+        ADD_TO_CART(state, payload) { state.inCart.push(payload) },
+        REMOVE_FROM_CART(state, index) { state.inCart.splice(index, 1) },
+        UPDATE_USER(state, { user }) { Vue.set(state, 'user', user) }
     },
     actions: {
         clearProductPreview(context) { context.commit('CLEAR_PRODUCT_PREVIEW') },
-        showProduct(context, id) { context.commit('SHOW_PRODUCT', id); },
-        addToCart(context, id) { context.commit('ADD_TO_CART', id); },
-        removeFromCart(context, index) { context.commit('REMOVE_FROM_CART', index); }
+        showProduct(context, payload) { context.commit('SHOW_PRODUCT', payload) },
+        setProductSelectedSize(context, payload) { context.commit('SET_PRODUCT_SELECTED_SIZE', payload) },
+        addToCart(context, payload) { context.commit('ADD_TO_CART', payload) },
+        removeFromCart(context, index) { context.commit('REMOVE_FROM_CART', index) }
     },
     plugins: [vuexLocalStorage.plugin]
 });

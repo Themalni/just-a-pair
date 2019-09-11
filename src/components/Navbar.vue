@@ -4,20 +4,61 @@
     <nav class="navbar navbar-dark info-color fixed-top scrolling-navbar">
       <!-- Navbar brand -->
       <router-link to="/" class="navbar-brand">
-        <img :src="logo">
+        <img :src="logo" />
       </router-link>
       <ul class="navbar-nav ml-auto navbar-icons">
         <li class="nav-item">
-          <a class="nav-link">
-            <md-icon>account_circle</md-icon>
-          </a>
+          <user-popover>
+            <template slot="activator">
+              <a class="nav-link font-weight-bolder text-large">
+                User
+                <md-icon>account_circle</md-icon>
+              </a>
+            </template>
+            <template slot="content">
+              <div class="popover-content">
+                <span class="popover-arrow"></span>
+                <a
+                  v-if="!user"
+                  class="popover-item popover-link font-weight-bolder"
+                  href="#userLoginModal"
+                  data-toggle="modal"
+                  data-target="#userLoginModal"
+                  @click="openRegisterTab()"
+                >
+                  <span class="popover-text">Register</span>
+                </a>
+                <a
+                  v-if="!user"
+                  class="popover-item popover-link font-weight-bolder"
+                  href="#userLoginModal"
+                  data-toggle="modal"
+                  data-target="#userLoginModal"
+                  @click="openLoginTab()"
+                >
+                  <span class="popover-text">Login</span>
+                </a>
+                <router-link
+                  v-if="!!user"
+                  class="popover-item popover-link font-weight-bolder"
+                  to="/admin-dashboard"
+                >Admin</router-link>
+                <div v-if="!!user" class="popover-item popover-link">
+                  <button class="button-reset font-weight-bolder" @click="logout()">Logout</button>
+                </div>
+              </div>
+            </template>
+          </user-popover>
+        </li>
+        <li class="nav-item">
           <a
             href="#shoppingCartModal"
-            class="nav-link"
+            class="nav-link font-weight-bolder text-large"
             data-toggle="modal"
             data-target="#shoppingCartModal"
           >
             <span v-show="inCart.length > 0" class="cart-counter">{{ inCart.length }}</span>
+            <span class="mr-1">Cart</span>
             <md-icon>shopping_cart</md-icon>
           </a>
         </li>
@@ -68,20 +109,43 @@
       <!-- Collapsible content -->
     </nav>
     <!--/.Navbar-->
+    <login />
   </div>
 </template>
 
 <script>
+import Login from "@/components/user/Login";
+import Popover from "@/components/Popover";
+import { fb } from "@/firebase";
+import { mapState } from "vuex";
+
 export default {
   name: "Navbar",
+  components: {
+    Login,
+    "user-popover": Popover
+  },
   data() {
     return {
       logo: "../assets/logo.svg"
     };
   },
   computed: {
+    ...mapState(["user"]),
     inCart() {
       return this.$store.getters.inCart;
+    }
+  },
+  methods: {
+    openRegisterTab() {
+      $('#loginTab a[href="#register"]').tab("show");
+    },
+    openLoginTab() {
+      $('#loginTab a[href="#login"]').tab("show");
+    },
+    async logout() {
+      await this.$auth.logout();
+      this.$router.push("/");
     }
   }
 };
@@ -98,6 +162,10 @@ export default {
         .nav-link {
           padding: 10px;
           position: relative;
+
+          &:hover {
+            text-decoration: none;
+          }
         }
       }
     }
@@ -106,9 +174,14 @@ export default {
     width: 30px;
   }
 }
-.navbar-icons {
-  li {
-    display: inherit;
+.navbar-nav {
+  &.navbar-icons {
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .nav-item {
+      display: inherit;
+    }
   }
 }
 .info-color {
