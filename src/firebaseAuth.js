@@ -1,4 +1,4 @@
-import { store } from '@/store';
+import { store } from './store';
 import { fb } from "@/firebase";
 
 export default {
