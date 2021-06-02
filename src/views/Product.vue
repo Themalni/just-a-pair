@@ -27,7 +27,8 @@
                 class="product-price fancy-font deep-orange-text mb-3"
               >${{ product.price | salePrice(product.salePercentage) }}</div>
               <div v-else class="product-price mb-3">${{ product.price }}</div>
-              <size-variations :sizes="product.sizes" @selectedSize="setSelectedSize($event)"/>
+              <size-variations :sizes="product.sizes" @selectedSize="setSelectedSize"/>
+              <span v-if="sizeNotSelected" class="d-block mt-1 mb-1 text-danger">Select the size first</span>
               <button
                 class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
                 :class="{disabled: product.stock == 'out of stock'}"
@@ -56,6 +57,7 @@ import ProductDetails from "@/components/product/ProductDetails";
 import Offer from "@/components/Offer";
 import Collection from "@/components/Collection";
 import ProductThumbnail from "../components/product/ProductThumbnail";
+import products from "../services/productList";
 
 import { mapGetters, mapActions } from "vuex";
 
@@ -71,14 +73,16 @@ export default {
     Collection,
     ProductThumbnail
   },
+  data() {
+    return {
+      products: products,
+      selectedSize: null,
+      sizeNotSelected: false
+    }
+  },
   computed: {
-    ...mapGetters(["products", "productPreview"]),
+    ...mapGetters(["productPreview"]),
     productList() {
-      // return this.productPreview.map(productPreviewItem => {
-      //   return this.products.find(itemToPreview => {
-      //     return productPreviewItem === itemToPreview.id;
-      //   });
-      // });
       return this.productPreview;
     },
     suggestions() {
@@ -87,15 +91,19 @@ export default {
   },
   methods: {
     ...mapActions(["setProductSelectedSize"]),
+
     addToCart(product) {
-      this.$store.dispatch("addToCart", product);
+      if (!this.selectedSize) {
+        this.sizeNotSelected = true;
+        return;
+      }
+      product.selectedSizes.push(this.selectedSize);
+      this.$store.dispatch("addToCart", product)
+        .then(() => this.sizeNotSelected = false);
     },
     setSelectedSize(size) {
-      // this.productList.map(item => {
-      //   item.selectedSize = size;
-      // });
-      this.$store.dispatch("setProductSelectedSize", size);
-      console.log("Set size:", size);
+      this.selectedSize = size;
+      this.sizeNotSelected = false;
     }
   }
 };

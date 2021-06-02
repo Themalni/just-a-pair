@@ -16,11 +16,15 @@ import ImageGrid from "@/components/ImageGrid";
 import Collection from "@/components/Collection";
 import ProductThumbnail from "../components/product/ProductThumbnail";
 import Footer from "@/components/Footer";
-
-import { mapGetters } from "vuex";
+import products from "../services/productList";
 
 export default {
   name: "Home",
+  data() {
+    return {
+      products: products,
+    }
+  },
   components: {
     ImageGrid,
     Collection,
@@ -28,22 +32,14 @@ export default {
     "app-footer": Footer
   },
   computed: {
-    ...mapGetters(["products"]),
-    productList() {
-      return this.products;
+    newCollection() {
+      return this.products.filter(product => product.offer === "New");
     },
-    newCollection: function() {
-      return this.productList.filter(product => {
-        return product.offer === "New";
-      });
-    },
-    showThreeProducts: function() {
+    showThreeProducts() {
       return this.newCollection.slice(0, 3);
     },
-    saleCollection: function() {
-      return this.productList.filter(product => {
-        return product.offer === "Sale";
-      });
+    saleCollection() {
+      return this.products.filter(product => product.offer === "Sale");
     }
   }
 };
