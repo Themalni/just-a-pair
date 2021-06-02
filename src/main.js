@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import App from './App.vue'
+import store from './store'
 import VueResource from 'vue-resource'
 import router from './router'
 import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbvue/build/css/mdb.css'
-import { store } from './store'
 import filters from './filters'
 import firebaseAuth from './firebaseAuth'
 
