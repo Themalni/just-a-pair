@@ -29,7 +29,7 @@ export default {
     PageHeader,
     Collection,
     ProductThumbnail,
-    "app-footer": Footer
+    AppFooter: Footer
   },
   computed: {
     newCollection() {

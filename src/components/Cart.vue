@@ -73,6 +73,8 @@
 
 <script>
 import { mapState } from "vuex";
+import { REMOVE_FROM_CART } from "@/store/types";
+import store from "@/store";
 
 export default {
   name: "Cart",
@@ -104,7 +106,7 @@ export default {
   },
   methods: {
     removeFromCart(index) {
-      this.$store.dispatch("removeFromCart", index);
+      store.dispatch(REMOVE_FROM_CART, index);
     }
   }
 };
