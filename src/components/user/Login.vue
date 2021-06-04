@@ -103,7 +103,7 @@
 
 <script>
 import { fb, db } from "@/firebase";
-import { mapGetters, mapMutations } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Login",
@@ -116,7 +116,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["user"]),
+    ...mapState(["user"]),
     nextRoute() {
       return this.$route.query.redirect || "/";
     }
@@ -143,7 +143,6 @@ export default {
           } else {
             alert(errorMessage);
           }
-          console.log(error);
         });
     },
     login() {
@@ -161,7 +160,6 @@ export default {
           } else {
             alert(errorMessage);
           }
-          console.log(error);
         });
     }
   },
