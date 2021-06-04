@@ -1,10 +1,10 @@
 <template>
   <div class="mt-5">
-    <image-grid />
-    <collection header="New Collection">
+    <page-header class="mb-4" />
+    <collection header="New Collection" class="pt-4">
       <product-thumbnail v-for="item in showThreeProducts" :key="item.id" :product="item"></product-thumbnail>
     </collection>
-    <collection header="Sale">
+    <collection header="Sale" class="mt-4 mb-4">
       <product-thumbnail v-for="item in saleCollection" :key="item.id" :product="item"></product-thumbnail>
     </collection>
     <app-footer />
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import ImageGrid from "@/components/ImageGrid";
+import PageHeader from "@/components/PageHeader";
 import Collection from "@/components/Collection";
 import ProductThumbnail from "../components/product/ProductThumbnail";
 import Footer from "@/components/Footer";
@@ -26,7 +26,7 @@ export default {
     }
   },
   components: {
-    ImageGrid,
+    PageHeader,
     Collection,
     ProductThumbnail,
     "app-footer": Footer
