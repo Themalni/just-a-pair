@@ -7,6 +7,7 @@ import 'bootstrap-css-only/css/bootstrap.min.css'
 import 'mdbvue/build/css/mdb.css'
 import filters from './filters'
 import firebaseAuth from './firebaseAuth'
+import Notifications from 'vue-notification'
 
 Vue.config.productionTip = false
 
@@ -19,6 +20,7 @@ import 'vue-material/dist/vue-material.min.css'
 Vue.use(VueResource)
 Vue.use(VueMaterial)
 Vue.use(firebaseAuth)
+Vue.use(Notifications)
 
 
 new Vue({
