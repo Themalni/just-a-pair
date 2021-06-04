@@ -15,18 +15,22 @@
         <span
           class="product-price fancy-font"
           :class="{ 'sale-price': product.sale }"
-        >${{ product.price }}</span>
+        >
+          ${{ product.price }}
+        </span>
         <span
           v-if="product.sale"
           class="product-price fancy-font deep-orange-text"
-        >${{ product.price | salePrice(product.salePercentage) }}</span>
+        >
+          ${{ product.price | salePrice(product.salePercentage) }}
+        </span>
       </div>
     </router-link>
   </div>
 </template>
 
 <script>
-import { mapGetters, mapMutations, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "ProductThumbnail",
@@ -36,7 +40,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["productPreview"])
+    ...mapState(["productPreview"])
   },
   methods: {
     ...mapActions(["clearProductPreview"]),

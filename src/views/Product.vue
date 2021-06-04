@@ -62,7 +62,7 @@ import products from "../services/productList";
 import Amount from "@/components/Amount";
 import Footer from "@/components/Footer";
 
-import { mapGetters, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Product",
@@ -87,7 +87,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["productPreview"]),
+    ...mapState(["productPreview"]),
     productList() {
       return this.productPreview;
     },
