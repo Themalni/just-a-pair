@@ -20,19 +20,23 @@
                   <th scope="col" class="narrow-col">Color</th>
                   <th scope="col" class="narrow-col">Size</th>
                   <th scope="col" class="narrow-col">Price</th>
-                  <th scope="col" class="narrow-col">Remove</th>
+                  <th scope="col" class="narrow-col text-right">Amount</th>
+                  <th scope="col" class="narrow-col text-right">Item total</th>
+                  <th scope="col" class="narrow-col text-center">Remove</th>
                 </tr>
               </thead>
               <tbody name="fade">
-                <tr v-for="(item, index) in cart" v-bind="cart" :key="index">
+                <tr v-for="(item, index) in itemsWithTotal" v-bind="inCart" :key="index">
                   <th scope="row">
                     <img :src="item.image" class="cart-item-img">
                   </th>
                   <td>{{ item.title }}</td>
                   <td>{{ item.color }}</td>
-                  <td>{{ item.selectedSize }}</td>
-                  <td>${{ item.price }}</td>
-                  <td scope="col">
+                  <td>{{ item.size }}</td>
+                  <td>${{ item.price | salePrice(item.salePercentage) }}</td>
+                  <td class="text-right">{{ item.amount }}</td>
+                  <td class="text-right">${{ item.total }}</td>
+                  <td scope="col" class="text-center">
                     <button
                       class="btn light-blue btn-sm btn-remove"
                       @click="removeFromCart(index)"
@@ -42,8 +46,9 @@
               </tbody>
               <tfoot>
                 <tr v-show="total > 0">
-                  <th id="total" colspan="4" class="text-right">Total:</th>
-                  <td colspan="2">${{ total }}</td>
+                  <td colspan="6" class="text-right"><span class="mr-4">Total:</span> {{ amount }}</td>
+                  <td colspan="1" class="text-right">${{ total }}</td>
+                  <td></td>
                 </tr>
                 <tr v-show="total === 0">
                   <th colspan="5" class="text-center">Your shopping cart is emty</th>
@@ -67,22 +72,34 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 
 export default {
   name: "Cart",
   computed: {
-    ...mapGetters(["products", "inCart"]),
-    cart() {
-      // return this.$store.getters.inCart.map(cartItem => {
-      //   return this.$store.getters.products.find(itemToAdd => {
-      //     return cartItem === itemToAdd.id;
-      //   });
-      // });
-      return this.inCart;
+    ...mapState(["inCart"]),
+
+    itemsWithTotal() {
+      const cart = this.inCart;
+      return cart.map(item => {
+        const priceAfterDiscount = item.price - (Math.floor(item.salePercentage / 100 * item.price))
+        item.total = priceAfterDiscount * item.amount;
+        return item;
+      })
     },
+
+    amount() {
+      return this.inCart.reduce((acc, cur) => acc + cur.amount, 0);
+    },
+
     total() {
-      return this.cart.reduce((acc, cur) => acc + cur.price, 0);
+      return this.inCart.reduce((acc, cur) => {
+        if (cur.salePercentage) {
+          const priceAfterDiscount = cur.price - (Math.floor(cur.salePercentage / 100 * cur.price));
+          return acc + (priceAfterDiscount * cur.amount)
+        }
+        return acc + (cur.price * cur.amount)
+      }, 0);
     }
   },
   methods: {
