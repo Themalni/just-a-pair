@@ -24,7 +24,7 @@
                   href="#userLoginModal"
                   data-toggle="modal"
                   data-target="#userLoginModal"
-                  @click="openRegisterTab()"
+                  @click="openRegisterTab"
                 >
                   <span class="popover-text">Register</span>
                 </a>
@@ -34,7 +34,7 @@
                   href="#userLoginModal"
                   data-toggle="modal"
                   data-target="#userLoginModal"
-                  @click="openLoginTab()"
+                  @click="openLoginTab"
                 >
                   <span class="popover-text">Login</span>
                 </a>
@@ -44,7 +44,7 @@
                   to="/admin-dashboard"
                 >Admin</router-link>
                 <div v-if="!!user" class="popover-item popover-link">
-                  <button class="button-reset font-weight-bolder" @click="logout()">Logout</button>
+                  <button class="button-reset font-weight-bolder" @click="logout">Logout</button>
                 </div>
               </div>
             </template>
@@ -118,6 +118,8 @@ import Login from "@/components/user/Login";
 import Popover from "@/components/Popover";
 import { fb } from "@/firebase";
 import { mapState } from "vuex";
+import { CLEAR_USER } from "@/store/types";
+import store from '@/store';
 
 export default {
   name: "Navbar",
@@ -140,9 +142,28 @@ export default {
     openLoginTab() {
       $('#loginTab a[href="#login"]').tab("show");
     },
-    async logout() {
-      await this.$auth.logout();
-      this.$router.push("/");
+    logout() {
+      fb.auth().signOut()
+        .then(() => {
+          store.dispatch(CLEAR_USER);
+
+          this.$notify({
+            text: 'You logout successfully',
+            type: 'success',
+            duration: 3000
+          })
+        })
+        .catch(() => {
+          this.$notify({
+            text: 'Logout error',
+            type: 'error',
+            duration: 3000
+          })
+        });
+
+      if(this.$route.name !== "Home") {
+        this.$router.push("/");
+      }
     }
   }
 };

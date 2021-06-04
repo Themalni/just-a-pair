@@ -1,16 +1,19 @@
-import Vue from 'vue'
+import {
+    SET_USER,
+    CLEAR_USER,
+    ADD_TO_CART,
+    REMOVE_FROM_CART,
+    SET_PRODUCT_TO_PREVIEW
+} from "./types";
 
 export default {
-    CLEAR_PRODUCT_PREVIEW(state) {
-        state.productPreview = [];
+    [SET_USER](state, payload) {
+        state.user = payload;
     },
-    SHOW_PRODUCT(state, payload) {
-        state.productPreview.push(payload);
+    [CLEAR_USER](state) {
+        state.user = null;
     },
-    SET_PRODUCT_SELECTED_SIZE(state, payload) {
-        state.productPreview.map(product => product.selectedSizes.push(payload));
-    },
-    ADD_TO_CART(state, payload) {
+    [ADD_TO_CART](state, payload) {
         const foundInCart = state.inCart.some(item => item.id === payload.id && item.size === payload.size);
 
         if(foundInCart) {
@@ -24,10 +27,10 @@ export default {
             state.inCart.push(payload)
         }
     },
-    REMOVE_FROM_CART(state, index) {
+    [REMOVE_FROM_CART](state, index) {
         state.inCart.splice(index, 1)
     },
-    UPDATE_USER(state, { user }) {
-        Vue.set(state, 'user', user)
+    [SET_PRODUCT_TO_PREVIEW](state, payload) {
+        state.productPreview = payload;
     }
 }

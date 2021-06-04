@@ -1,7 +1,7 @@
 <template>
   <div class="col-md-4 col-sm-6">
     <router-link :to="'/product/' + product.id" class="product-link">
-      <div class="product-thumbnail pb-2" @click="showProduct()">
+      <div class="product-thumbnail pb-2" @click="showProduct">
         <div v-if="!product.sale" class="offer-tag">{{ product.offer }}</div>
         <div
           v-else
@@ -30,7 +30,9 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+
+import { SET_PRODUCT_TO_PREVIEW } from "@/store/types";
+import store from "@/store";
 
 export default {
   name: "ProductThumbnail",
@@ -39,14 +41,9 @@ export default {
       type: Object
     }
   },
-  computed: {
-    ...mapState(["productPreview"])
-  },
   methods: {
-    ...mapActions(["clearProductPreview"]),
     showProduct() {
-      this.clearProductPreview();
-      this.$store.dispatch("showProduct", this.product);
+      store.dispatch(SET_PRODUCT_TO_PREVIEW, this.product);
     }
   }
 };

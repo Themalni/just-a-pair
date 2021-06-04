@@ -1,6 +1,6 @@
 export default {
     selectedProduct: null,
     inCart: [],
-    productPreview: [],
+    productPreview: null,
     user: null
 }

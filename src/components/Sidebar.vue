@@ -1,10 +1,10 @@
 <template>
   <div class="sidebar-container">
     <h2 class="sidebar-header font-weight-bolder text-large pl-3 pt-4 pb-3">Admin dashboard</h2>
-    <div class="sidebar-user mt-3 ml-3 mb-2">Hello, {{ user }}</div>
+    <div class="sidebar-user mt-3 ml-3 mb-2">Hello, {{ userName }}</div>
     <ul class="nav flex-column">
       <li class="nav-item">
-        <button class="button-reset text-white ml-3" @click="logout()">
+        <button class="button-reset text-white ml-3" @click="logout">
           <md-icon class="icon-sm">logout</md-icon>Logout
         </button>
       </li>
@@ -14,18 +14,36 @@
 
 <script>
 import { fb } from "@/firebase";
+import { mapState } from "vuex";
 
 export default {
   name: "Sidebar",
-  props: {
-    user: {
-      type: String
+
+  computed: {
+    ...mapState(["user"]),
+
+    userName() {
+      return this.user.displayName || '';
     }
   },
   methods: {
-    async logout() {
-      await this.$auth.logout();
-      this.$router.push("/");
+    logout() {
+      fb.auth().signOut()
+        .then(() => {
+          this.$notify({
+            text: 'You logout successfully',
+            type: 'success',
+            duration: 3000
+          });
+          this.$router.push("/");
+        })
+        .catch(() => {
+          this.$notify({
+            text: 'Logout error',
+            type: 'error',
+            duration: 3000
+          })
+        });
     }
   }
 };
