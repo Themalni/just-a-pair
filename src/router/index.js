@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import routes from './routes'
 import vueScrollto from 'vue-scrollto'
-import { store } from '../store'
+import store from '../store'
 
 Vue.use(Router)
 Vue.use(vueScrollto)

@@ -10,77 +10,65 @@
         </div>
         <div class="modal-body">
           <h4 class="table-title">Mens footwear</h4>
-          <table
-            class="table table-responsive-lg text-center"
-            v-for="category in sizeGuideMen"
-            :key="category.id"
-          >
+          <table class="table table-responsive-lg text-center">
             <tbody>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">USA</th>
-                <td v-for="(value, index) in category.USA" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideMen.USA" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">UK</th>
-                <td v-for="(value, index) in category.UK" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideMen.UK" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">EUR</th>
-                <td v-for="(value, index) in category.EUR" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideMen.EUR" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text" colspan="4">cm</th>
-                <td v-for="(value, index) in category.cm" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideMen.cm" :key="index">{{ value }}</td>
               </tr>
             </tbody>
           </table>
           <h4 class="table-title">Womens footwear</h4>
-          <table
-            class="table table-responsive-lg text-center"
-            v-for="category in sizeGuideWomen"
-            :key="category.id"
-          >
+          <table class="table table-responsive-lg text-center">
             <tbody>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">USA</th>
-                <td v-for="(value, index) in category.USA" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideWomen.USA" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">UK</th>
-                <td v-for="(value, index) in category.UK" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideWomen.UK" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">EUR</th>
-                <td v-for="(value, index) in category.EUR" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideWomen.EUR" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text" colspan="4">cm</th>
-                <td v-for="(value, index) in category.cm" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideWomen.cm" :key="index">{{ value }}</td>
               </tr>
             </tbody>
           </table>
           <h4 class="table-title">Childrens footwear</h4>
-          <table
-            class="table table-responsive-lg text-center"
-            v-for="category in sizeGuideChildren"
-            :key="category.id"
-          >
+          <table class="table table-responsive-lg text-center">
             <tbody>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">USA</th>
-                <td v-for="(value, index) in category.USA" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideChildren.USA" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">UK</th>
-                <td v-for="(value, index) in category.UK" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideChildren.UK" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text table-category" colspan="4">EUR</th>
-                <td v-for="(value, index) in category.EUR" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideChildren.EUR" :key="index">{{ value }}</td>
               </tr>
               <tr>
                 <th class="main-blue white-text" colspan="4">cm</th>
-                <td v-for="(value, index) in category.cm" :key="index">{{ value }}</td>
+                <td v-for="(value, index) in sizeGuideChildren.cm" :key="index">{{ value }}</td>
               </tr>
             </tbody>
           </table>
@@ -93,14 +81,19 @@
   </div>
 </template>
 <script>
-import { mapState } from "vuex";
+
+import { sizeGuideMen, sizeGuideWomen, sizeGuideChildren } from "@/services/sizeGuide"
 
 export default {
   name: "SizeGuide",
-  computed: {
-    ...mapState(["sizeGuideMen", "sizeGuideWomen", "sizeGuideChildren"])
-  },
-  props: ["USA", "UK", "EUR", "cm"]
+
+  data() {
+    return {
+      sizeGuideMen: sizeGuideMen,
+      sizeGuideWomen: sizeGuideWomen,
+      sizeGuideChildren: sizeGuideChildren
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>

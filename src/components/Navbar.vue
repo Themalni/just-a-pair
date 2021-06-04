@@ -131,10 +131,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["user"]),
-    inCart() {
-      return this.$store.getters.inCart;
-    }
+    ...mapState(["user", "inCart"])
   },
   methods: {
     openRegisterTab() {

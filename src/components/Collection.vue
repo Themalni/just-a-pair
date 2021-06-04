@@ -25,7 +25,6 @@ export default {
 <style lang="scss" scoped>
 .collection {
   text-align: center;
-  padding-top: 4em;
 }
 .collection-header {
   color: #333;

@@ -5,34 +5,35 @@
         <div class="container">
           <breadcrumbs/>
           <div class="row" v-for="(product, key) in productList" :key="key">
-            <div class="col-md-7">
+            <div class="col-md-5">
               <carousel :image="product.image" :sliderImages="product.sliderImages"/>
             </div>
-            <div class="col-md-5">
+            <div class="col-md-7">
               <h1 class="product-name">{{ product.title }}</h1>
               <rating/>
               <div class="row no-gutters">
                 <div class="col-md-5">
-                  <div class="product-id text-uppercase">sku: {{ product.sku }}</div>
-                </div>
-                <div class="col-md-7">
-                  <div
-                    class="product-stock font-bold"
-                    :class="{'deep-orange-text': product.stock === 'out of stock'}"
-                  >{{ product.stock }}</div>
+                  <small class="dark-muted-color text-uppercase d-block mb-2">sku: {{ product.sku }}</small>
                 </div>
               </div>
-              <div
-                v-if="product.sale"
-                class="product-price fancy-font deep-orange-text mb-3"
-              >${{ product.price | salePrice(product.salePercentage) }}</div>
-              <div v-else class="product-price mb-3">${{ product.price }}</div>
-              <size-variations :sizes="product.sizes" @selectedSize="setSelectedSize($event)"/>
+              <span :class="['fancy-font', 'mr-2', 'product-price', { 'muted-price': product.sale }]">
+                ${{ product.price }}
+              </span>
+              <span v-if="product.sale" class="product-price fancy-font deep-orange-text">
+                ${{ product.price | salePrice(product.salePercentage) }}
+              </span>
+              <div class="mt-2">
+                  <span v-if="product.inStock" class="product-stock dark-muted-color font-bold d-block">in stock</span>
+                  <span v-else :class="['product-stock', 'font-bold', 'd-block', {'deep-orange-text': !product.inStock}]">out of stock</span>
+              </div>
+              <size-variations :sizes="product.sizes" @selectedSize="setSelectedSize"/>
+              <amount class="mb-4" @amount="setAmount"/>
+              <span v-if="sizeNotSelected" class="d-block mt-1 mb-1 text-danger">Select the size first</span>
               <button
                 class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
-                :class="{disabled: product.stock == 'out of stock'}"
+                :class="{ 'disabled' : !product.inStock}"
                 @click="addToCart(product)"
-                :disabled="product.stock === 'out of stock'"
+                :disabled="!product.inStock"
               >Add to cart</button>
             </div>
           </div>
@@ -40,10 +41,11 @@
       </div>
     </transition>
     <product-details/>
-    <collection header="You might also like">
+    <collection header="You might also like" class="pt-4 mt-4">
       <product-thumbnail v-for="item in suggestions" :key="item.id" :product="item"></product-thumbnail>
     </collection>
     <offer/>
+    <app-footer />
   </div>
 </template>
 
@@ -56,8 +58,11 @@ import ProductDetails from "@/components/product/ProductDetails";
 import Offer from "@/components/Offer";
 import Collection from "@/components/Collection";
 import ProductThumbnail from "../components/product/ProductThumbnail";
+import products from "../services/productList";
+import Amount from "@/components/Amount";
+import Footer from "@/components/Footer";
 
-import { mapGetters, mapActions } from "vuex";
+import { mapState, mapActions } from "vuex";
 
 export default {
   name: "Product",
@@ -69,16 +74,21 @@ export default {
     ProductDetails,
     Offer,
     Collection,
-    ProductThumbnail
+    ProductThumbnail,
+    Amount,
+    "app-footer": Footer
+  },
+  data() {
+    return {
+      products: products,
+      selectedSize: null,
+      sizeNotSelected: false,
+      selectedAmount: 1
+    }
   },
   computed: {
-    ...mapGetters(["products", "productPreview"]),
+    ...mapState(["productPreview"]),
     productList() {
-      // return this.productPreview.map(productPreviewItem => {
-      //   return this.products.find(itemToPreview => {
-      //     return productPreviewItem === itemToPreview.id;
-      //   });
-      // });
       return this.productPreview;
     },
     suggestions() {
@@ -87,15 +97,38 @@ export default {
   },
   methods: {
     ...mapActions(["setProductSelectedSize"]),
-    addToCart(product) {
-      this.$store.dispatch("addToCart", product);
-    },
+
     setSelectedSize(size) {
-      // this.productList.map(item => {
-      //   item.selectedSize = size;
-      // });
-      this.$store.dispatch("setProductSelectedSize", size);
-      console.log("Set size:", size);
+      this.selectedSize = size;
+      this.sizeNotSelected = false;
+    },
+    setAmount(amount) {
+      this.selectedAmount = amount;
+    },
+    addToCart(product) {
+      if (!this.selectedSize) {
+        this.sizeNotSelected = true;
+        return;
+      }
+
+      const { id, title, sku, price, salePercentage, color, image, sale } = product;
+      const normalizedProduct = { id, title, sku, price, salePercentage, color, image, sale };
+
+      const selectedProductData = {
+        ...normalizedProduct,
+        amount: this.selectedAmount,
+        size: this.selectedSize
+      }
+
+      this.$store.dispatch("addToCart", selectedProductData)
+        .then(() => {
+          this.$notify({
+            text: 'Item was added to the busket',
+            type: 'success',
+            duration: 3000
+          })
+          this.sizeNotSelected = false
+        });
     }
   }
 };
@@ -104,7 +137,7 @@ export default {
 <style lang="scss" scoped>
 .product {
   margin-top: 3.5em;
-  padding-bottom: 5.6em;
+  padding-bottom: 2em;
 
   @include device-size(xs, sm) {
     padding-bottom: 0;
@@ -115,19 +148,20 @@ export default {
   font-family: $fancy-font;
   font-weight: bold;
 }
-.product-id,
-.product-stock {
-  margin: 0.5em 0 1em;
-  font-size: 1.2em;
-  color: $dark-grey;
-}
 .product-price {
   font-size: 2em;
+}
+.muted-price {
+  color: grey;
+  text-decoration: line-through;
 }
 .button-accent {
   width: 235px;
   margin-top: 0.37em;
   box-shadow: none;
+    &:hover {
+      color: #fff;
+    }
 }
 .fade-enter-active,
 .fade-leave-active {

@@ -37,7 +37,7 @@
               role="tabpanel"
               aria-labelledby="login-tab"
             >
-              <div class="md-form mb-2 mt-0">
+              <div class="md-form mb-2 mt-3">
                 <md-icon class="prefix grey-text">email</md-icon>
                 <input
                   type="email"
@@ -103,7 +103,7 @@
 
 <script>
 import { fb, db } from "@/firebase";
-import { mapGetters, mapMutations } from "vuex";
+import { mapState, mapMutations } from "vuex";
 
 export default {
   name: "Login",
@@ -116,7 +116,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["user"]),
+    ...mapState(["user"]),
     nextRoute() {
       return this.$route.query.redirect || "/";
     }
@@ -143,7 +143,6 @@ export default {
           } else {
             alert(errorMessage);
           }
-          console.log(error);
         });
     },
     login() {
@@ -161,7 +160,6 @@ export default {
           } else {
             alert(errorMessage);
           }
-          console.log(error);
         });
     }
   },

@@ -5,6 +5,7 @@
     <transition name="fade">
       <router-view />
     </transition>
+    <notifications classes="notifications"/>
   </div>
 </template>
 
