@@ -1,5 +1,6 @@
 import store from './store';
 import { fb } from "@/firebase";
+import { SET_USER, CLEAR_USER } from "@/store/types";
 
 export default {
 	install: (Vue, options) => {
@@ -13,7 +14,10 @@ export default {
 			}
 		}
 		auth.onAuthStateChanged(user => {
-			store.commit('UPDATE_USER', { user })
+			if (user) {
+				return store.dispatch(SET_USER, { displayName: user.displayName, email: user.email })
+			}
+			return store.dispatch(CLEAR_USER);
 		})
 	}
 }

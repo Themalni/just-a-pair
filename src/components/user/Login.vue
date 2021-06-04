@@ -102,7 +102,7 @@
 </template>
 
 <script>
-import { fb, db } from "@/firebase";
+import { fb } from "@/firebase";
 import { mapState, mapMutations } from "vuex";
 
 export default {
@@ -111,46 +111,40 @@ export default {
     return {
       name: null,
       email: null,
-      password: null,
-      userData: null
+      password: null
     };
   },
   computed: {
-    ...mapState(["user"]),
-    nextRoute() {
-      return this.$route.query.redirect || "/";
-    }
+    ...mapState(["user"])
   },
   methods: {
     ...mapMutations(["updateUser"]),
     registerUser() {
       fb.auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .then(user => {
-          db.collection("profiles")
-            .doc(user.user.uid)
-            .set({
-              name: this.name
-            });
-          $("#userLoginModal").modal("hide");
-          this.$router.replace("admin-dashboard");
-        })
-        .catch(function(error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          if (errorCode == "auth/weak-password") {
-            alert("The password is too weak.");
-          } else {
-            alert(errorMessage);
-          }
-        });
+          .then(() => {
+            const user = fb.auth().currentUser;
+            user.updateProfile({ displayName: this.name })
+
+            $("#userLoginModal").modal("hide");
+            this.$router.replace("admin-dashboard");
+          })
+          .catch(function(error) {
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            if (errorCode == "auth/weak-password") {
+              alert("The password is too weak.");
+            } else {
+              alert(errorMessage);
+            }
+          });
     },
     login() {
       fb.auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           $("#userLoginModal").modal("hide");
-          this.$router.push("/admin-dashboard");
+          this.$router.replace("admin-dashboard");
         })
         .catch(function(error) {
           var errorCode = error.code;
@@ -161,13 +155,6 @@ export default {
             alert(errorMessage);
           }
         });
-    }
-  },
-  watch: {
-    user(auth) {
-      if (!!auth) {
-        this.$router.replace(this.nextRoute);
-      }
     }
   }
 };
