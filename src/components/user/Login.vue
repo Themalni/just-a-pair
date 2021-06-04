@@ -37,7 +37,7 @@
               role="tabpanel"
               aria-labelledby="login-tab"
             >
-              <div class="md-form mb-2 mt-0">
+              <div class="md-form mb-2 mt-3">
                 <md-icon class="prefix grey-text">email</md-icon>
                 <input
                   type="email"

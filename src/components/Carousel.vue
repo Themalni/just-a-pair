@@ -67,7 +67,7 @@ export default {
   height: 600px;
 }
 .carousel-indicators {
-  bottom: -6em;
+  bottom: -6.8em;
   margin-left: 25%;
   margin-right: 25%;
 

@@ -71,6 +71,7 @@ export default {
 .product-details {
   padding: 30px 0;
   color: #333;
+  background-color: $light-grey;
 }
 .details-header {
   font-family: $fancy-font;
