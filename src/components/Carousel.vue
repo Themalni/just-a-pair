@@ -8,7 +8,7 @@
           data-target="#carousel-product-view"
           data-slide-to="index"
           class="waves-effect waves-light"
-          v-for="(value, index) in sliderImages"
+          v-for="(value, index) in productPreview.sliderImages"
           :key="index"
         >
           <img :src="value" class="d-block w-100">
@@ -20,7 +20,7 @@
         <!--First slide-->
         <div
           class="carousel-item"
-          v-for="(value, index) in sliderImages"
+          v-for="(value, index) in productPreview.sliderImages"
           :key="index"
           :class="{ active: index === 0 }"
         >
@@ -35,16 +35,14 @@
 </template>
 
 <script>
+
+import { mapState } from "vuex";
+
 export default {
   name: "Carousel",
-  props: ["id", "image", "sliderImages"],
+
   computed: {
-    products() {
-      return this.$store.getters.products;
-    },
-    singleProduct() {
-      return this.$store.getters.singleProduct;
-    }
+    ...mapState(["productPreview"]),
   },
   mounted() {
     $(".carousel").carousel();
