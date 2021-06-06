@@ -181,10 +181,6 @@ export default {
           padding: 10px;
           position: relative;
 
-          &:active {
-            color: $dark-grey;
-          }
-
           &:hover {
             text-decoration: none;
           }

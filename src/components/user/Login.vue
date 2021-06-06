@@ -212,6 +212,10 @@ export default {
       text-decoration: none;
     }
 
+    &.active {
+      color: $dark-grey;
+    }
+
     &:not(.active):hover {
       border-color: transparent;
       background-color: rgba(255, 255, 255, 0.3);
