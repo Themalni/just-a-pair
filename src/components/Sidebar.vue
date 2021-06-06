@@ -1,7 +1,8 @@
 <template>
   <div class="sidebar-container">
-    <h2 class="sidebar-header font-weight-bolder text-large pl-3 pt-4 pb-3">Admin dashboard</h2>
+    <h2 class="sidebar-header font-weight-bolder text-large pl-3 pt-4 pb-3">Your profile</h2>
     <div class="sidebar-user mt-3 ml-3 mb-2">Hello, {{ userName }}</div>
+    <div class="sidebar-user mt-3 ml-3 mb-2">{{ userEmail }}</div>
     <ul class="nav flex-column">
       <li class="nav-item">
         <button class="button-reset text-white ml-3" @click="logout">
@@ -15,6 +16,8 @@
 <script>
 import { fb } from "@/firebase";
 import { mapState } from "vuex";
+import { CLEAR_USER } from "@/store/types";
+import store from '@/store';
 
 export default {
   name: "Sidebar",
@@ -23,13 +26,18 @@ export default {
     ...mapState(["user"]),
 
     userName() {
-      return this.user.displayName || '';
+      return this.user ? this.user.displayName : '';
+    },
+    userEmail() {
+      return this.user ? this.user.email : '';
     }
   },
   methods: {
     logout() {
       fb.auth().signOut()
         .then(() => {
+          store.dispatch(CLEAR_USER);
+
           this.$notify({
             text: 'You logout successfully',
             type: 'success',

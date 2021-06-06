@@ -41,8 +41,8 @@
                 <router-link
                   v-if="!!user"
                   class="popover-item popover-link font-weight-bolder"
-                  to="/admin-dashboard"
-                >Admin</router-link>
+                  to="/user-dashboard"
+                >User profile</router-link>
                 <div v-if="!!user" class="popover-item popover-link">
                   <button class="button-reset font-weight-bolder" @click="logout">Logout</button>
                 </div>

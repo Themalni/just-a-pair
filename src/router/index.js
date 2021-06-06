@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import routes from './routes'
 import vueScrollto from 'vue-scrollto'
 import { fb } from "@/firebase";
+import store from "@/store";
 
 Vue.use(Router)
 Vue.use(vueScrollto)
@@ -25,16 +26,16 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  const currentUser = fb.auth().currentUser;
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const currentUser = fb.auth().currentUser || store.state.user;
+  const authRequired = to.matched.some(record => record.meta.authRequired);
 
-  if (requiresAuth && !currentUser) {
+  if (authRequired && !currentUser) {
+    next({ name: 'Home' });
+  } else if (authRequired && currentUser && to.path !== '/user-dashboard') {
     next({
-      path: '/',
-      query: { redirect: to.fullPath }
+      path: '/user-dashboard',
+      replace: true
     })
-  } else if (requiresAuth && currentUser) {
-    next('admin-dashboard')
   } else {
     next();
   }

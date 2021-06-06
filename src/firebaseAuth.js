@@ -3,7 +3,7 @@ import { fb } from "@/firebase";
 import { SET_USER, CLEAR_USER } from "@/store/types";
 
 export default {
-	install: (Vue, options) => {
+	install: (Vue) => {
 		const auth = fb.auth()
 		Vue.prototype.$auth = {
 			login: async (userName, password) => {
