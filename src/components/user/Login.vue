@@ -1,5 +1,5 @@
 <template>
-  <div class="modal fade" id="userLoginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade" ref="userLoginModal" id="userLoginModal" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header text-center">
@@ -111,7 +111,8 @@ export default {
     return {
       name: null,
       email: null,
-      password: null
+      password: null,
+      userLoginModal: false
     };
   },
   computed: {
@@ -124,19 +125,36 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
           .then(() => {
             const user = fb.auth().currentUser;
-            user.updateProfile({ displayName: this.name })
+            user.updateProfile({ displayName: this.name });
+
+            this.$notify({
+              text: 'You successully registered your account',
+              type: 'success',
+              duration: 3000
+            });
 
             $("#userLoginModal").modal("hide");
-            this.$router.replace("admin-dashboard");
+
+            this.$router.push("/user-dashboard");
           })
-          .catch(function(error) {
-            var errorCode = error.code;
-            var errorMessage = error.message;
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
             if (errorCode == "auth/weak-password") {
-              alert("The password is too weak.");
-            } else {
-              alert(errorMessage);
+              this.$notify({
+                text: 'The password is too weak',
+                type: 'error',
+                duration: 3000
+              });
+              return;
             }
+
+            this.$notify({
+              text: errorMessage,
+              type: 'error',
+              duration: 3000
+            });
           });
     },
     login() {
@@ -144,16 +162,25 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(() => {
           $("#userLoginModal").modal("hide");
-          this.$router.replace("admin-dashboard");
+          this.$router.push("/user-dashboard");
         })
-        .catch(function(error) {
-          var errorCode = error.code;
-          var errorMessage = error.message;
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
           if (errorCode === "auth/wrong-password") {
-            alert("Wrong password.");
-          } else {
-            alert(errorMessage);
+            this.$notify({
+              text: 'Wrong password',
+              type: 'error',
+              duration: 3000
+            });
+            return;
           }
+            this.$notify({
+              text: errorMessage,
+              type: 'error',
+              duration: 3000
+            });
         });
     }
   }
