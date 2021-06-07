@@ -1,15 +1,13 @@
 <template>
   <div class="sidebar-container">
-    <h2 class="sidebar-header font-weight-bolder text-large pl-3 pt-4 pb-3">Your profile</h2>
+    <h3 class="sidebar-header pl-3 pt-4 pb-3">Your profile</h3>
+    <div class="separator"></div>
     <div class="sidebar-user mt-3 ml-3 mb-2">Hello, {{ userName }}</div>
     <div class="sidebar-user mt-3 ml-3 mb-2">{{ userEmail }}</div>
-    <ul class="nav flex-column">
-      <li class="nav-item">
-        <button class="button-reset text-white ml-3" @click="logout">
-          <md-icon class="icon-sm">logout</md-icon>Logout
-        </button>
-      </li>
-    </ul>
+    <div class="separator mt-3 mb-4"></div>
+    <button class="button-reset text-white ml-3" @click="logout">
+      <md-icon class="icon-sm">logout</md-icon>Logout
+    </button>
   </div>
 </template>
 
@@ -58,13 +56,13 @@ export default {
 </script>
 <style lang="scss" scoped>
 .sidebar-container {
+  margin-top: 60px;
   width: 240px;
-  height: 100vh;
+  height: 93.9vh;
   background-color: $dark-blue;
 }
 .sidebar-header {
   color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 .btn {
   &.btn-link {
@@ -73,5 +71,8 @@ export default {
 }
 .sidebar-user {
   color: #fff;
+}
+.separator {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 </style>

@@ -3,8 +3,7 @@ module.exports = {
       loaderOptions: {
         sass: {
           data: `@import "./src/assets/scss/vars.scss";`
-        },
-        esModule: false
+        }
       }
     },
   }
