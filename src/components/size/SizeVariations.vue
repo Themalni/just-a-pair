@@ -30,7 +30,7 @@
     </div>
     <size-guide/>
     <transition name="fade">
-      <p v-if="selectedSize.length > 0">
+      <p v-if="selectedSize">
         Selected size:
         <span class="accent font-weight-bold">{{ selectedSize }}</span>
       </p>
@@ -39,14 +39,15 @@
 </template>
 
 <script>
+
 import SizeGuide from "./SizeGuide";
+import { mapState } from "vuex";
 
 export default {
   name: "SizeVariations",
   data() {
     return {
-      selectedSize: "",
-      firstAvailableSize: ""
+      selectedSize: null
     };
   },
   props: {
@@ -57,7 +58,25 @@ export default {
   components: {
     SizeGuide
   },
+  mounted() {
+    this.resetSize();
+  },
+  watch: {
+    'productPreview.id': {
+      handler(value) {
+        if(value) {
+          this.resetSize();
+        }
+      }
+    }
+  },
+  computed: {
+    ...mapState(["productPreview"])
+  },
   methods: {
+    resetSize() {
+      this.selectedSize = null
+    },
     selectShoesSize(size) {
       this.$emit("selectedSize", size.number);
       if (size.available === true) {
