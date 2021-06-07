@@ -87,6 +87,15 @@ export default {
       selectedAmount: 1
     }
   },
+  watch: {
+    'productPreview.id': {
+      handler(value) {
+        if(value) {
+          this.resetSizeAndAmount();
+        }
+      }
+    }
+  },
   computed: {
     ...mapState(["productPreview"]),
 
@@ -95,6 +104,10 @@ export default {
     }
   },
   methods: {
+    resetSizeAndAmount() {
+      this.selectedSize = null;
+      this.selectedAmount = 1;
+    },
     setSelectedSize(size) {
       this.selectedSize = size;
       this.sizeNotSelected = false;
