@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<div class="mt-5">
+  <div class="container-fluid pr-0 pl-0 mb-4">
+    <div class="row no-gutters">
+      <div class="col-md-12 grid-image-container">
+        <div class="grid-image-text">
+          <h2 class="sub-header">Welcome to</h2>
+          <h1 class="header text-uppercase font-weight-bold">Just a Pair</h1>
+          <h3 class="sub-header">Your favourite shoe store online</h3> <button class="btn btn-outline-light btn-lg mt-5">New collection</button>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col-md-4 col-sm-4"><img src="../assets/women_shoes.jpg" class="grid-image">
+        <div class="grid-image-text-bottom pb-4">
+          <h2 class="sub-header font-weight-bold">Women Collection</h2> <button class="btn btn-sm mt-2 button-accent">Buy now</button>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4"><img src="../assets/men_shoes.jpg" class="grid-image">
+        <div class="grid-image-text-bottom pb-4">
+          <h2 class="sub-header font-weight-bold">Men Collection</h2> <button class="btn btn-sm mt-2 button-accent">Buy now</button>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4"><img src="../assets/children_shoes.jpg" class="grid-image">
+        <div class="grid-image-text-bottom pb-4">
+          <h2 class="sub-header font-weight-bold">Children Collection</h2> <button class="btn btn-sm mt-2 button-accent">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-4">
+    <div id="product-grid" class="collection">
+      <div class="container">
+        <h1 class="collection-header">New Collection</h1>
+        <div class="row collection-items">
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/622" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag">New</div>
+                <div class="product-image"><img src="../assets/shoes_white_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Star Gazers</h3> <span class="product-price fancy-font">
+        $139
+      </span>
+                <!---->
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/624" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag">New</div>
+                <div class="product-image"><img src="../assets/shoes_blue_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Be Diva Stillettos</h3> <span class="product-price fancy-font">
+        $84
+      </span>
+                <!---->
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/626" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag">New</div>
+                <div class="product-image"><img src="../assets/shoes_grey_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Symphony Light</h3> <span class="product-price fancy-font">
+        $129
+      </span>
+                <!---->
+              </div>
+            </router-link-stub>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-4 mb-4">
+    <div id="product-grid" class="collection">
+      <div class="container">
+        <h1 class="collection-header">Sale</h1>
+        <div class="row collection-items">
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/621" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag accent">-65%</div>
+                <div class="product-image"><img src="../assets/sneakers.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Be Yourself</h3> <span class="product-price fancy-font sale-price">
+        $89
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $32
+      </span>
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/623" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag accent">-15%</div>
+                <div class="product-image"><img src="../assets/shoes_red_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Millenium Night</h3> <span class="product-price fancy-font sale-price">
+        $99
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $85
+      </span>
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/625" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag accent">-70%</div>
+                <div class="product-image"><img src="../assets/shoes_black_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Solarine</h3> <span class="product-price fancy-font sale-price">
+        $249
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $75
+      </span>
+              </div>
+            </router-link-stub>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <footer class="footer">
+      <div class="newsletter">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <p class="newsletter-text">Subscribe to our newsletter and receive a coupon for 15% off your first purchase</p>
+            </div>
+            <div class="col-md-3 text-right"><button class="btn btn-outline-light newsletter-button mt-3">Subscribe</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="container links-container">
+        <div class="row">
+          <div class="col-md-8 footer-links">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">Departments</h4>
+                <div class="col-md-12 links"><a href="#">Women</a> <a href="#">Men</a> <a href="#">Children</a> <a href="#">Home</a></div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">User Profile</h4>
+                <div class="col-md-12 links"><a href="#">Orders</a> <a href="#">Reviews</a> <a href="#">Coupons</a></div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">Help</h4>
+                <div class="col-md-12 links"><a href="#">How to order</a> <a href="#">How to pay</a> <a href="#">Delivery</a> <a href="#">Returns</a></div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">About</h4>
+                <div class="col-md-12 links"><a href="#">About Us</a> <a href="#">Privacy Policy</a> <a href="#">Career</a> <a href="#">Contact Us</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 footer-social">
+            <div class="text-right"><a href="#" class="social-icon"><i class="fa fa-facebook fa-2x"></i></a> <a href="#" class="social-icon"><i class="fa fa-instagram fa-2x"></i></a> <a href="#" class="social-icon"><i class="fa fa-pinterest-p fa-2x"></i></a> <a href="#" class="social-icon"><i class="fa fa-youtube-square fa-2x"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

@@ -18,6 +18,11 @@ export default {
   components: {
     Navbar,
     Cart
+  },
+  data() {
+    return {
+
+    }
   }
 };
 </script>

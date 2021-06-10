@@ -1,14 +1,14 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 import routes from './routes'
 import vueScrollto from 'vue-scrollto'
 import { fb } from "@/firebase";
 import store from "@/store";
 
-Vue.use(Router)
+Vue.use(VueRouter)
 Vue.use(vueScrollto)
 
-const router = new Router({
+const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   scrollBehavior(to) {
@@ -22,7 +22,7 @@ const router = new Router({
       y: 0
     };
   },
-  routes
+  routes: routes
 })
 
 router.beforeEach((to, from, next) => {

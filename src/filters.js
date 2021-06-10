@@ -5,3 +5,5 @@ Vue.filter('salePrice', (price, sale) => {
     if (!sale) sale = 0;
     return price - Math.floor((sale / 100) * price);
 });
+
+export default Vue.filter('salePrice');

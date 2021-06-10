@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Amount renders correctrly 1`] = `
+<div><span class="font-weight-bold d-block mt-2 mb-2">Select product amount</span>
+  <div class="amount"><button disabled="disabled" class="btn m-0">
+      -
+    </button> <span class="amount-number border-dark">1</span> <button class="btn m-0">+</button></div>
+</div>
+`;
