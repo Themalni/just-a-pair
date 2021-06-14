@@ -16,6 +16,7 @@
     "@firebase/firestore": "^2.3.2",
     "@vue/cli-plugin-unit-jest": "^4.5.13",
     "firebase": "^8.6.3",
+    "jquery": "^3.6.0",
     "mdbootstrap": "^4.5.9",
     "mdbvue": "^4.7.0",
     "node": "^12.6.0",
