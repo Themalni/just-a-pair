@@ -20,7 +20,7 @@
                 <span class="popover-arrow"></span>
                 <a
                   v-if="!user"
-                  class="popover-item popover-link font-weight-bolder"
+                  class="register-btn popover-item popover-link font-weight-bolder"
                   href="#userLoginModal"
                   data-toggle="modal"
                   data-target="#userLoginModal"
@@ -30,7 +30,7 @@
                 </a>
                 <a
                   v-if="!user"
-                  class="popover-item popover-link font-weight-bolder"
+                  class="login-btn popover-item popover-link font-weight-bolder"
                   href="#userLoginModal"
                   data-toggle="modal"
                   data-target="#userLoginModal"
@@ -40,11 +40,11 @@
                 </a>
                 <router-link
                   v-if="!!user"
-                  class="popover-item popover-link font-weight-bolder"
+                  class="user-profile popover-item popover-link font-weight-bolder"
                   to="/user-dashboard"
                 >User profile</router-link>
                 <div v-if="!!user" class="popover-item popover-link">
-                  <button class="button-reset font-weight-bolder" @click="logout">Logout</button>
+                  <button class="logout-btn button-reset font-weight-bolder" @click="logout()">Logout</button>
                 </div>
               </div>
             </template>
@@ -120,6 +120,7 @@ import { fb } from "@/firebase";
 import { mapState } from "vuex";
 import { CLEAR_USER } from "@/store/types";
 import store from '@/store';
+import $ from 'jquery';
 
 export default {
   name: "Navbar",
@@ -142,10 +143,16 @@ export default {
     openLoginTab() {
       $('#loginTab a[href="#login"]').tab("show");
     },
+    firebaseSignOut() {
+      return fb.auth().signOut();
+    },
+    clearUser() {
+      return store.dispatch(CLEAR_USER);
+    },
     logout() {
-      fb.auth().signOut()
+      this.firebaseSignOut()
         .then(() => {
-          store.dispatch(CLEAR_USER);
+          this.clearUser();
 
           this.$notify({
             text: 'You logout successfully',
