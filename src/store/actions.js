@@ -16,8 +16,8 @@ export default {
     [ADD_TO_CART]({commit}, data) {
         return commit(ADD_TO_CART, data);
     },
-    [REMOVE_FROM_CART]({commit}, index) {
-        return commit(REMOVE_FROM_CART, index);
+    [REMOVE_FROM_CART]({commit}, {id, size}) {
+        return commit(REMOVE_FROM_CART, {id, size});
     },
     [SET_PRODUCT_TO_PREVIEW]({commit}, product) {
         return commit(SET_PRODUCT_TO_PREVIEW, product);

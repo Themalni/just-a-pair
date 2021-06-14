@@ -39,7 +39,7 @@
                   <td scope="col" class="text-center">
                     <button
                       class="btn light-blue btn-sm btn-remove"
-                      @click="removeFromCart(index)"
+                      @click="removeFromCart(item)"
                     >X</button>
                   </td>
                 </tr>
@@ -105,8 +105,12 @@ export default {
     }
   },
   methods: {
-    removeFromCart(index) {
-      store.dispatch(REMOVE_FROM_CART, index);
+    removeFromCart(product) {
+      const productData = {
+        id: product.id,
+        size: product.size
+      }
+      store.dispatch(REMOVE_FROM_CART, productData);
     }
   }
 };

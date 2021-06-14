@@ -18,7 +18,7 @@ export default {
 
         if(foundInCart) {
             state.inCart.map(item => {
-                if(item.id === payload.id) {
+                if(item.id === payload.id && item.size === payload.size) {
                     item.amount = item.amount + payload.amount;
                 }
                 return item;
@@ -27,8 +27,9 @@ export default {
             state.inCart.push(payload)
         }
     },
-    [REMOVE_FROM_CART](state, index) {
-        state.inCart.splice(index, 1)
+    [REMOVE_FROM_CART](state, {id, size}) {
+        const productIndex = state.inCart.findIndex(cartItem => cartItem.id === id && cartItem.size === size);
+        state.inCart.splice(productIndex, 1);
     },
     [SET_PRODUCT_TO_PREVIEW](state, payload) {
         state.productPreview = payload;
