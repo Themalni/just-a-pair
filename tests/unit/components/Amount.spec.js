@@ -11,12 +11,11 @@ describe('Amount', () => {
     let wrapper
     let store
     let state
-    let spy
 
     beforeEach(() => {
-        // state: mockState
+        state = mockState.state
         store = new Vuex.Store({
-            state: mockState
+            state: state
         })
 
         wrapper = mount(Amount, {
@@ -30,7 +29,7 @@ describe('Amount', () => {
 
     afterEach(() => {
         wrapper.destroy();
-    })
+    });
 
     it('renders correctrly', () => {
         expect(wrapper.html()).toMatchSnapshot();
@@ -86,14 +85,10 @@ describe('Amount', () => {
     })
 
     it('resets selected amount when product id has been changed', async () => {
-        console.log("productPreview:", wrapper.vm.$store.state)
-        // wrapper.vm.$store.state.productPreview.id = 999;
-        // wrapper.vm.$nextTick(() => {
-        //     expect(wrapper.vm.resetAmount()).toBeCalled();
-        //     done();
-        // });
-        // wrapper.vm.$options.watch.$store.state.productPreview.id.call(wrapper.vm, 999);
-        // state.productPreview.id = 622;
-        
+        const resetAmountMock = jest.spyOn(wrapper.vm, 'resetAmount')
+        store.state.productPreview.id = 999;
+
+        await wrapper.vm.$nextTick();
+        expect(resetAmountMock).toHaveBeenCalled();
     })
 })

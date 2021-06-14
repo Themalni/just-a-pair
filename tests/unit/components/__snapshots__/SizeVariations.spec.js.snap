@@ -1,0 +1,210 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SizeVariations renders correctrly 1`] = `
+<div>
+  <div class="size-variations pt-2"><span class="d-block font-weight-bold mt-2 mb-2">Select size</span>
+    <div class="row no-gutters">
+      <div class="col-md-5">
+        <div disabled="disabled" class="sizes mb-1 waves-effect waves-light size-disabled"><span class="single-size text-uppercase"></span></div>
+      </div>
+      <div class="col"><a href="#sizeGuideModal" data-toggle="modal" data-target="#sizeGuideModal" class="size-guide-link mb-3 ml-3">
+          <md-icon-stub>straighten</md-icon-stub> <span class="link-text">Size guide</span>
+        </a></div>
+    </div>
+  </div>
+  <div id="sizeGuideModal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+    <div role="document" class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title font-weight-bold">Shoe Size Guide</h5> <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <h4 class="table-title">Mens footwear</h4>
+          <table class="table table-responsive-lg text-center">
+            <tbody>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">USA</th>
+                <td>7</td>
+                <td>7.5</td>
+                <td>8</td>
+                <td>8.5</td>
+                <td>9</td>
+                <td>9.5</td>
+                <td>10</td>
+                <td>10.5</td>
+                <td>11</td>
+                <td>11.5</td>
+                <td>12</td>
+                <td>13</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">UK</th>
+                <td>6</td>
+                <td>6.5</td>
+                <td>7</td>
+                <td>7.5</td>
+                <td>8</td>
+                <td>8.5</td>
+                <td>9</td>
+                <td>9.5</td>
+                <td>10</td>
+                <td>10.5</td>
+                <td>11</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">EUR</th>
+                <td>39.5</td>
+                <td>40</td>
+                <td>41</td>
+                <td>41.5</td>
+                <td>42</td>
+                <td>42.5</td>
+                <td>43</td>
+                <td>44</td>
+                <td>44.5</td>
+                <td>45</td>
+                <td>46</td>
+                <td>47</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text">cm</th>
+                <td>26</td>
+                <td>26.5</td>
+                <td>27</td>
+                <td>27.5</td>
+                <td>28</td>
+                <td>28.5</td>
+                <td>29</td>
+                <td>29.5</td>
+                <td>30</td>
+                <td>30.5</td>
+                <td>31</td>
+                <td>31.5</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 class="table-title">Womens footwear</h4>
+          <table class="table table-responsive-lg text-center">
+            <tbody>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">USA</th>
+                <td>6</td>
+                <td>6.5</td>
+                <td>7</td>
+                <td>7.5</td>
+                <td>8</td>
+                <td>8.5</td>
+                <td>9</td>
+                <td>9.5</td>
+                <td>10</td>
+                <td>10.5</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">UK</th>
+                <td>3.5</td>
+                <td>4</td>
+                <td>4.5</td>
+                <td>5</td>
+                <td>5.5</td>
+                <td>6</td>
+                <td>6.5</td>
+                <td>7</td>
+                <td>7.5</td>
+                <td>8</td>
+                <td>8.5</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">EUR</th>
+                <td>36.5</td>
+                <td>37.5</td>
+                <td>38</td>
+                <td>38.5</td>
+                <td>39</td>
+                <td>39.5</td>
+                <td>40</td>
+                <td>41</td>
+                <td>41.5</td>
+                <td>42</td>
+                <td>42.5</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text">cm</th>
+                <td>24</td>
+                <td>24.5</td>
+                <td>25</td>
+                <td>25.5</td>
+                <td>26</td>
+                <td>26.5</td>
+                <td>27</td>
+                <td>27.5</td>
+                <td>28</td>
+                <td>28.5</td>
+                <td>29</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4 class="table-title">Childrens footwear</h4>
+          <table class="table table-responsive-lg text-center">
+            <tbody>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">USA</th>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">UK</th>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+                <td>13</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text table-category">EUR</th>
+                <td>28</td>
+                <td>29.5</td>
+                <td>31</td>
+                <td>32</td>
+                <td>33.5</td>
+                <td>35</td>
+                <td>36</td>
+                <td>37.5</td>
+                <td>38.5</td>
+              </tr>
+              <tr>
+                <th colspan="4" class="main-blue white-text">cm</th>
+                <td>18.5</td>
+                <td>19.5</td>
+                <td>20</td>
+                <td>21</td>
+                <td>22</td>
+                <td>23</td>
+                <td>23.5</td>
+                <td>24.5</td>
+                <td>25.5</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-secondary btn-sm">Close</button></div>
+      </div>
+    </div>
+  </div>
+  <transition-stub name="fade">
+    <!---->
+  </transition-stub>
+</div>
+`;

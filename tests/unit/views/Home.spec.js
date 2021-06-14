@@ -11,7 +11,6 @@ const localVue = createLocalVue();
 localVue.directive('scroll-to', VueScrollTo);
 localVue.filter('salePrice', salePrice);
 
-
 describe('Home', () => {
     let wrapper
 

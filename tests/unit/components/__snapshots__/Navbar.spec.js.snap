@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctrly 1`] = `
+<div class="app-header">
+  <nav class="navbar navbar-dark info-color fixed-top scrolling-navbar"><a href="#/" aria-current="page" class="navbar-brand router-link-exact-active router-link-active"><img src="../assets/logo.svg"></a>
+    <ul class="navbar-nav ml-auto navbar-icons">
+      <li class="nav-item">
+        <div class="custom-popover">
+          <div><a class="nav-link font-weight-bolder text-large">
+              User
+              <md-icon-stub>account_circle</md-icon-stub>
+            </a></div>
+          <div style="display: none;">
+            <div class="popover-content"><span class="popover-arrow"></span>
+              <!---->
+              <!----> <a href="#/user-dashboard" class="user-profile popover-item popover-link font-weight-bolder">User profile</a>
+              <div class="popover-item popover-link"><button class="logout-btn button-reset font-weight-bolder">Logout</button></div>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item"><a href="#shoppingCartModal" data-toggle="modal" data-target="#shoppingCartModal" class="nav-link font-weight-bolder text-large"><span class="cart-counter">1</span> <span class="mr-1">Cart</span>
+          <md-icon-stub>shopping_cart</md-icon-stub>
+        </a></li>
+    </ul> <button type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+    <div id="basicExampleNav" class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active"><a href="#" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">
+            Women
+            <span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Children</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Sale</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Your order</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div id="userLoginModal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+    <div role="document" class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header text-center">
+          <ul id="loginTab" role="tablist" class="nav nav-tabs">
+            <li class="nav-item"><a id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true" class="nav-link active mr-1">Login</a></li>
+            <li class="nav-item"><a id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false" class="nav-link ml-1">Register</a></li>
+          </ul>
+        </div>
+        <div class="modal-body mx-3">
+          <div id="myTabContent" class="tab-content">
+            <div id="login" role="tabpanel" aria-labelledby="login-tab" class="tab-pane fade show active">
+              <div class="md-form mb-2 mt-3">
+                <md-icon-stub class="prefix grey-text">email</md-icon-stub> <input type="email" id="login-email" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="login-email">Your email</label>
+              </div>
+              <div class="md-form mb-2">
+                <md-icon-stub class="prefix grey-text">lock</md-icon-stub> <input type="password" id="login-pass" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="login-pass">Your password</label>
+              </div> <button class="login-btn btn btn-primary btn-block mb-2 mt-4">Login</button>
+            </div>
+            <div id="register" role="tabpanel" aria-labelledby="register-tab" class="tab-pane fade">
+              <div class="md-form pb-2 mt-2">
+                <md-icon-stub class="prefix grey-text">account_circle</md-icon-stub> <input type="text" id="register-name" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="register-name">Your name</label>
+              </div>
+              <div class="md-form pb-2 mt-2">
+                <md-icon-stub class="prefix grey-text">email</md-icon-stub> <input type="email" id="register-email" class="form-control validate mb-2 mt-4"> <label data-error="wrong" data-success="right" for="register-email">Your email</label>
+              </div>
+              <div class="md-form pb-2 mt-2">
+                <md-icon-stub class="prefix grey-text">lock</md-icon-stub> <input type="password" id="register-pass" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="register-pass">Your password</label>
+              </div> <button class="register-btn btn btn-default btn-block mb-2 mt-4">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

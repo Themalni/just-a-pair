@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart renders correctrly 1`] = `
+<div>
+  <div id="shoppingCartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false" class="modal fade">
+    <div role="document" class="modal-dialog modal-frame modal-top">
+      <div class="modal-content">
+        <div class="modal-body">
+          <table class="table">
+            <thead class="main-blue white-text">
+              <tr>
+                <th scope="col" class="narrow-col">Image</th>
+                <th scope="col" class="wide-col">Title</th>
+                <th scope="col" class="narrow-col">Color</th>
+                <th scope="col" class="narrow-col">Size</th>
+                <th scope="col" class="narrow-col">Price</th>
+                <th scope="col" class="narrow-col text-right">Amount</th>
+                <th scope="col" class="narrow-col text-right">Item total</th>
+                <th scope="col" class="narrow-col text-center">Remove</th>
+              </tr>
+            </thead>
+            <tbody name="fade">
+              <tr id="621" title="Summer sandals" sku="BR55-36-Black" price="120" salepercentage="30" color="Black" image="../assets/sneakers.jpg" sliderimages="../assets/sneakers.jpg,../assets/sneakers.jpg,../assets/sneakers.jpg" sale="true" amount="1" size="37" total="84">
+                <th scope="row"><img src="../assets/sneakers.jpg" class="cart-item-img"></th>
+                <td>Summer sandals</td>
+                <td>Black</td>
+                <td>37</td>
+                <td>$84</td>
+                <td class="text-right">1</td>
+                <td class="text-right">$84</td>
+                <td scope="col" class="text-center"><button class="btn light-blue btn-sm btn-remove">X</button></td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="6" class="text-right"><span class="mr-4">Total:</span> 1</td>
+                <td colspan="1" class="text-right">$84</td>
+                <td></td>
+              </tr>
+              <tr style="display: none;">
+                <th colspan="5" class="text-center">Your shopping cart is emty</th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="modal-footer"><button type="button" data-dismiss="modal" class="btn orange-accent btn-sm">Continue Shopping</button> <button type="button" class="btn main-blue btn-sm">Checkout</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
