@@ -35,17 +35,17 @@ export default {
   },
 
   watch: {
-    'productPreview.id': {
-      handler(value) {
-        if(value) {
-          this.resetAmount();
-        }
-      }
+    productPreviewId() {
+      this.resetAmount();
     }
   },
 
   computed: {
-    ...mapState(["productPreview"])
+    ...mapState(["productPreview"]),
+
+    productPreviewId() {
+      return this.productPreview.id;
+    }
   },
 
   methods: {

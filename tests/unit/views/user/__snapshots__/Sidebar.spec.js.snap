@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar renders correctrly 1`] = `
+<div class="sidebar-container">
+  <h3 class="sidebar-header pl-3 pt-4 pb-3">Your profile</h3>
+  <div class="separator"></div>
+  <div class="sidebar-user mt-3 ml-3 mb-2">Hello, John Smith</div>
+  <div class="sidebar-user mt-3 ml-3 mb-2">john_doe@gmail.com</div>
+  <div class="separator mt-3 mb-4"></div> <button class="logout-btn button-reset text-white ml-3">
+    <md-icon-stub class="icon-sm">logout</md-icon-stub>Logout
+  </button>
+</div>
+`;

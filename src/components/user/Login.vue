@@ -58,7 +58,7 @@
                 />
                 <label data-error="wrong" data-success="right" for="login-pass">Your password</label>
               </div>
-              <button class="btn btn-primary btn-block mb-2 mt-4" @click="login">Login</button>
+              <button class="login-btn btn btn-primary btn-block mb-2 mt-4" @click="login()">Login</button>
             </div>
             <!-- Register -->
             <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
@@ -92,7 +92,7 @@
                 />
                 <label data-error="wrong" data-success="right" for="register-pass">Your password</label>
               </div>
-              <button class="btn btn-default btn-block mb-2 mt-4" @click="registerUser">Register</button>
+              <button class="register-btn btn btn-default btn-block mb-2 mt-4" @click="registerUser()">Register</button>
             </div>
           </div>
         </div>
@@ -102,6 +102,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 import { fb } from "@/firebase";
 import { mapState, mapMutations } from "vuex";
 

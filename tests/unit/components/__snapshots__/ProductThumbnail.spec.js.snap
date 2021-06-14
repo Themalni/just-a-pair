@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductThumbnail renders correctrly 1`] = `
+<div class="col-md-4 col-sm-6">
+  <router-link-stub to="/product/621" class="product-link">
+    <div class="product-thumbnail pb-2">
+      <div class="offer-tag accent">-30%</div>
+      <div class="product-image"><img src="../assets/sneakers.jpg"></div>
+      <h3 class="fancy-font mt-2 mb-2">Summer sandals</h3> <span class="product-price fancy-font sale-price">
+        $120
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $84
+      </span>
+    </div>
+  </router-link-stub>
+</div>
+`;

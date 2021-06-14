@@ -4,8 +4,8 @@
       <a href="#">
         <div class="offer"></div>
         <div class="offer-text">
-          <h3 class="text-uppercase">{{ offerType }}</h3>
-          <h1 class="font-weight-bold">{{ offerCategory }}</h1>
+          <h3 class="text-uppercase">New collection</h3>
+          <h1 class="font-weight-bold">Autumn Adventure</h1>
         </div>
       </a>
     </div>
@@ -14,13 +14,7 @@
 
 <script>
 export default {
-  name: "Offer",
-  data() {
-    return {
-      offerType: "New collection",
-      offerCategory: "Autumn Adventure"
-    };
-  }
+  name: "Offer"
 };
 </script>
 

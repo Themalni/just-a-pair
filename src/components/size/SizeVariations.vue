@@ -8,9 +8,9 @@
             v-for="(size) in sizes"
             :key="size.index"
             class="sizes mb-1 waves-effect waves-light"
-            :class="{ 'size-selected': selectedSize === size.number, 'size-disabled': size.available === false }"
-            :disabled="size.available === false"
-            @click="selectShoesSize(size, size.index)"
+            :class="{ 'size-selected': selectedSize === size.number, 'size-disabled': !size.available }"
+            :disabled="!size.available"
+            @click="selectShoesSize(size.number)"
           >
             <span class="single-size text-uppercase">{{ size.number }}</span>
           </div>
@@ -58,31 +58,25 @@ export default {
   components: {
     SizeGuide
   },
-  mounted() {
-    this.resetSize();
-  },
   watch: {
-    'productPreview.id': {
-      handler(value) {
-        if(value) {
-          this.resetSize();
-        }
-      }
+    productPreviewId() {
+      this.resetSize();
     }
   },
   computed: {
-    ...mapState(["productPreview"])
+    ...mapState(["productPreview"]),
+
+    productPreviewId() {
+      return this.productPreview.id;
+    }
   },
   methods: {
     resetSize() {
       this.selectedSize = null
     },
-    selectShoesSize(size) {
-      this.$emit("selectedSize", size.number);
-      if (size.available === true) {
-        return (this.selectedSize = size.number);
-      }
-      return size.number;
+    selectShoesSize(number) {
+      this.$emit("selectedSize", number);
+      this.selectedSize = number;
     }
   }
 };

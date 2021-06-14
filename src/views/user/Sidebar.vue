@@ -5,7 +5,7 @@
     <div class="sidebar-user mt-3 ml-3 mb-2">Hello, {{ userName }}</div>
     <div class="sidebar-user mt-3 ml-3 mb-2">{{ userEmail }}</div>
     <div class="separator mt-3 mb-4"></div>
-    <button class="button-reset text-white ml-3" @click="logout">
+    <button class="logout-btn button-reset text-white ml-3" @click="logout()">
       <md-icon class="icon-sm">logout</md-icon>Logout
     </button>
   </div>

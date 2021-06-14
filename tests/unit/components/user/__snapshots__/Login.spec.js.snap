@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login renders correctrly 1`] = `
+<div id="userLoginModal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+  <div role="document" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <ul id="loginTab" role="tablist" class="nav nav-tabs">
+          <li class="nav-item"><a id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true" class="nav-link active mr-1">Login</a></li>
+          <li class="nav-item"><a id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false" class="nav-link ml-1">Register</a></li>
+        </ul>
+      </div>
+      <div class="modal-body mx-3">
+        <div id="myTabContent" class="tab-content">
+          <div id="login" role="tabpanel" aria-labelledby="login-tab" class="tab-pane fade show active">
+            <div class="md-form mb-2 mt-3">
+              <md-icon-stub class="prefix grey-text">email</md-icon-stub> <input type="email" id="login-email" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="login-email">Your email</label>
+            </div>
+            <div class="md-form mb-2">
+              <md-icon-stub class="prefix grey-text">lock</md-icon-stub> <input type="password" id="login-pass" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="login-pass">Your password</label>
+            </div> <button class="login-btn btn btn-primary btn-block mb-2 mt-4">Login</button>
+          </div>
+          <div id="register" role="tabpanel" aria-labelledby="register-tab" class="tab-pane fade">
+            <div class="md-form pb-2 mt-2">
+              <md-icon-stub class="prefix grey-text">account_circle</md-icon-stub> <input type="text" id="register-name" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="register-name">Your name</label>
+            </div>
+            <div class="md-form pb-2 mt-2">
+              <md-icon-stub class="prefix grey-text">email</md-icon-stub> <input type="email" id="register-email" class="form-control validate mb-2 mt-4"> <label data-error="wrong" data-success="right" for="register-email">Your email</label>
+            </div>
+            <div class="md-form pb-2 mt-2">
+              <md-icon-stub class="prefix grey-text">lock</md-icon-stub> <input type="password" id="register-pass" class="form-control validate mb-2"> <label data-error="wrong" data-success="right" for="register-pass">Your password</label>
+            </div> <button class="register-btn btn btn-default btn-block mb-2 mt-4">Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

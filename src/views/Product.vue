@@ -30,9 +30,9 @@
               <amount class="mb-4" @amount="setAmount"/>
               <span v-if="sizeNotSelected" class="d-block mt-1 mb-1 text-danger">Select the size first</span>
               <button
-                class="btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
+                class="cart-btn btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase"
                 :class="{ 'disabled' : !productPreview.inStock}"
-                @click="addToCart"
+                @click="addToCart()"
                 :disabled="!productPreview.inStock"
               >Add to cart</button>
             </div>
@@ -88,16 +88,16 @@ export default {
     }
   },
   watch: {
-    'productPreview.id': {
-      handler(value) {
-        if(value) {
-          this.resetSizeAndAmount();
-        }
-      }
+    productPreviewId() {
+      this.resetSizeAndAmount();
     }
   },
   computed: {
     ...mapState(["productPreview"]),
+
+    productPreviewId() {
+      return this.productPreview.id;
+    },
 
     suggestions() {
       return this.products.slice(0, 6);
@@ -110,7 +110,10 @@ export default {
     },
     setSelectedSize(size) {
       this.selectedSize = size;
-      this.sizeNotSelected = false;
+
+      if(this.sizeNotSelected) {
+        this.sizeNotSelected = false;
+      }
     },
     setAmount(amount) {
       this.selectedAmount = amount;

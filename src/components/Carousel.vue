@@ -43,9 +43,6 @@ export default {
 
   computed: {
     ...mapState(["productPreview"]),
-  },
-  mounted() {
-    $(".carousel").carousel();
   }
 };
 </script>

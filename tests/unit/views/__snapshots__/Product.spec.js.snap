@@ -1,0 +1,459 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product renders correctrly 1`] = `
+<div>
+  <transition-stub name="fade">
+    <div class="product">
+      <div class="container">
+        <div>
+          <div class="breadcrumbs"><a href="#">
+              Home
+              <md-icon-stub>keyboard_arrow_right</md-icon-stub>
+            </a><a href="#">
+              Women
+              <md-icon-stub>keyboard_arrow_right</md-icon-stub>
+            </a><a href="#">
+              Shoes
+              <md-icon-stub>keyboard_arrow_right</md-icon-stub>
+            </a></div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <div>
+              <div id="carousel-product-view" data-interval="8000" class="carousel slide carousel-fade">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel-product-view" data-slide-to="index" class="waves-effect waves-light"><img src="../assets/sneakers.jpg" class="d-block w-100"></li>
+                  <li data-target="#carousel-product-view" data-slide-to="index" class="waves-effect waves-light"><img src="../assets/sneakers.jpg" class="d-block w-100"></li>
+                  <li data-target="#carousel-product-view" data-slide-to="index" class="waves-effect waves-light"><img src="../assets/sneakers.jpg" class="d-block w-100"></li>
+                </ol>
+                <div role="listbox" class="carousel-inner">
+                  <div class="carousel-item active"><img src="../assets/sneakers.jpg" alt="First slide" class="d-block w-100"></div>
+                  <div class="carousel-item"><img src="../assets/sneakers.jpg" alt="First slide" class="d-block w-100"></div>
+                  <div class="carousel-item"><img src="../assets/sneakers.jpg" alt="First slide" class="d-block w-100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <h1 class="product-name">Summer sandals</h1>
+            <div><span class="font-weight-bold">Product rating</span>
+              <div class="d-flex align-items-center mb-2">
+                <div data-v-fde73a0c="" class="vue-star-rating">
+                  <div data-v-fde73a0c="" class="sr-only"><span data-v-fde73a0c="">Rated 4.5 stars out of 5</span></div>
+                  <div data-v-fde73a0c="" class="vue-star-rating"><span data-v-fde73a0c="" class="vue-star-rating-star" style="margin-right: 0px;"><svg data-v-ef4bc576="" data-v-fde73a0c="" height="22" width="22" viewBox="0 0 21.999999999999996 21.999999999999996" class="vue-star-rating-star" step="50"><linearGradient data-v-ef4bc576="" id="41s4l2" x1="0" x2="100%" y1="0" y2="0"><stop data-v-ef4bc576="" offset="100%" stop-color="#ffd055" stop-opacity="1"></stop><stop data-v-ef4bc576="" offset="100%" stop-color="#000" stop-opacity="1"></stop></linearGradient><filter data-v-ef4bc576="" id="ltp5rr" height="130%" width="130%" filterUnits="userSpaceOnUse"><feGaussianBlur data-v-ef4bc576="" stdDeviation="0" result="coloredBlur"></feGaussianBlur><feMerge data-v-ef4bc576=""><feMergeNode data-v-ef4bc576="" in="coloredBlur"></feMergeNode><feMergeNode data-v-ef4bc576="" in="SourceGraphic"></feMergeNode></feMerge></filter><!----><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#41s4l2)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#41s4l2)"></polygon></svg></span><span data-v-fde73a0c="" class="vue-star-rating-star" style="margin-right: 0px;"><svg data-v-ef4bc576="" data-v-fde73a0c="" height="22" width="22" viewBox="0 0 21.999999999999996 21.999999999999996" class="vue-star-rating-star" step="50"><linearGradient data-v-ef4bc576="" id="g6l1b" x1="0" x2="100%" y1="0" y2="0"><stop data-v-ef4bc576="" offset="100%" stop-color="#ffd055" stop-opacity="1"></stop><stop data-v-ef4bc576="" offset="100%" stop-color="#000" stop-opacity="1"></stop></linearGradient><filter data-v-ef4bc576="" id="y5s8dq" height="130%" width="130%" filterUnits="userSpaceOnUse"><feGaussianBlur data-v-ef4bc576="" stdDeviation="0" result="coloredBlur"></feGaussianBlur><feMerge data-v-ef4bc576=""><feMergeNode data-v-ef4bc576="" in="coloredBlur"></feMergeNode><feMergeNode data-v-ef4bc576="" in="SourceGraphic"></feMergeNode></feMerge></filter><!----><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#g6l1b)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#g6l1b)"></polygon></svg></span><span data-v-fde73a0c="" class="vue-star-rating-star" style="margin-right: 0px;"><svg data-v-ef4bc576="" data-v-fde73a0c="" height="22" width="22" viewBox="0 0 21.999999999999996 21.999999999999996" class="vue-star-rating-star" step="50"><linearGradient data-v-ef4bc576="" id="ptft7t" x1="0" x2="100%" y1="0" y2="0"><stop data-v-ef4bc576="" offset="100%" stop-color="#ffd055" stop-opacity="1"></stop><stop data-v-ef4bc576="" offset="100%" stop-color="#000" stop-opacity="1"></stop></linearGradient><filter data-v-ef4bc576="" id="5qmak9" height="130%" width="130%" filterUnits="userSpaceOnUse"><feGaussianBlur data-v-ef4bc576="" stdDeviation="0" result="coloredBlur"></feGaussianBlur><feMerge data-v-ef4bc576=""><feMergeNode data-v-ef4bc576="" in="coloredBlur"></feMergeNode><feMergeNode data-v-ef4bc576="" in="SourceGraphic"></feMergeNode></feMerge></filter><!----><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#ptft7t)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#ptft7t)"></polygon></svg></span><span data-v-fde73a0c="" class="vue-star-rating-star" style="margin-right: 0px;"><svg data-v-ef4bc576="" data-v-fde73a0c="" height="22" width="22" viewBox="0 0 21.999999999999996 21.999999999999996" class="vue-star-rating-star" step="50"><linearGradient data-v-ef4bc576="" id="uufq5" x1="0" x2="100%" y1="0" y2="0"><stop data-v-ef4bc576="" offset="100%" stop-color="#ffd055" stop-opacity="1"></stop><stop data-v-ef4bc576="" offset="100%" stop-color="#000" stop-opacity="1"></stop></linearGradient><filter data-v-ef4bc576="" id="wiwy47" height="130%" width="130%" filterUnits="userSpaceOnUse"><feGaussianBlur data-v-ef4bc576="" stdDeviation="0" result="coloredBlur"></feGaussianBlur><feMerge data-v-ef4bc576=""><feMergeNode data-v-ef4bc576="" in="coloredBlur"></feMergeNode><feMergeNode data-v-ef4bc576="" in="SourceGraphic"></feMergeNode></feMerge></filter><!----><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#uufq5)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#uufq5)"></polygon></svg></span><span data-v-fde73a0c="" class="vue-star-rating-star" style="margin-right: 0px;"><svg data-v-ef4bc576="" data-v-fde73a0c="" height="22" width="22" viewBox="0 0 21.999999999999996 21.999999999999996" class="vue-star-rating-star" step="50"><linearGradient data-v-ef4bc576="" id="h0i74" x1="0" x2="100%" y1="0" y2="0"><stop data-v-ef4bc576="" offset="50%" stop-color="#ffd055" stop-opacity="1"></stop><stop data-v-ef4bc576="" offset="50%" stop-color="#000" stop-opacity="1"></stop></linearGradient><filter data-v-ef4bc576="" id="eeixqh" height="130%" width="130%" filterUnits="userSpaceOnUse"><feGaussianBlur data-v-ef4bc576="" stdDeviation="0" result="coloredBlur"></feGaussianBlur><feMerge data-v-ef4bc576=""><feMergeNode data-v-ef4bc576="" in="coloredBlur"></feMergeNode><feMergeNode data-v-ef4bc576="" in="SourceGraphic"></feMergeNode></feMerge></filter><!----><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#h0i74)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon><polygon data-v-ef4bc576="" points="9.999999999999998,1.111111111111111,3.3333333333333326,21.999999999999996,19.999999999999996,8.666666666666666,0,8.666666666666666,16.666666666666664,21.999999999999996" fill="url(#h0i74)"></polygon></svg></span>
+                    <!---->
+                  </div>
+                </div> <span class="d-inline-block ml-3 mt-1">(15 reviews)</span>
+              </div>
+            </div>
+            <div class="row no-gutters">
+              <div class="col-md-5"><small class="dark-muted-color text-uppercase d-block mb-2">sku: BR55-36-Black</small></div>
+            </div> <span class="fancy-font mr-2 product-price muted-price">
+              $120
+            </span> <span class="product-price fancy-font deep-orange-text">
+              $84
+            </span>
+            <div class="mt-2"><span class="product-stock dark-muted-color font-bold d-block">in stock</span></div>
+            <div>
+              <div class="size-variations pt-2"><span class="d-block font-weight-bold mt-2 mb-2">Select size</span>
+                <div class="row no-gutters">
+                  <div class="col-md-5">
+                    <div class="sizes mb-1 waves-effect waves-light"><span class="single-size text-uppercase">36</span></div>
+                    <div class="sizes mb-1 waves-effect waves-light"><span class="single-size text-uppercase">37</span></div>
+                    <div class="sizes mb-1 waves-effect waves-light"><span class="single-size text-uppercase">38</span></div>
+                    <div class="sizes mb-1 waves-effect waves-light"><span class="single-size text-uppercase">39</span></div>
+                    <div class="sizes mb-1 waves-effect waves-light"><span class="single-size text-uppercase">40</span></div>
+                    <div class="sizes mb-1 waves-effect waves-light"><span class="single-size text-uppercase">41</span></div>
+                    <div disabled="disabled" class="sizes mb-1 waves-effect waves-light size-disabled"><span class="single-size text-uppercase">42</span></div>
+                  </div>
+                  <div class="col"><a href="#sizeGuideModal" data-toggle="modal" data-target="#sizeGuideModal" class="size-guide-link mb-3 ml-3">
+                      <md-icon-stub>straighten</md-icon-stub> <span class="link-text">Size guide</span>
+                    </a></div>
+                </div>
+              </div>
+              <div id="sizeGuideModal" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade">
+                <div role="document" class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title font-weight-bold">Shoe Size Guide</h5> <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                      <h4 class="table-title">Mens footwear</h4>
+                      <table class="table table-responsive-lg text-center">
+                        <tbody>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">USA</th>
+                            <td>7</td>
+                            <td>7.5</td>
+                            <td>8</td>
+                            <td>8.5</td>
+                            <td>9</td>
+                            <td>9.5</td>
+                            <td>10</td>
+                            <td>10.5</td>
+                            <td>11</td>
+                            <td>11.5</td>
+                            <td>12</td>
+                            <td>13</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">UK</th>
+                            <td>6</td>
+                            <td>6.5</td>
+                            <td>7</td>
+                            <td>7.5</td>
+                            <td>8</td>
+                            <td>8.5</td>
+                            <td>9</td>
+                            <td>9.5</td>
+                            <td>10</td>
+                            <td>10.5</td>
+                            <td>11</td>
+                            <td>12</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">EUR</th>
+                            <td>39.5</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>41.5</td>
+                            <td>42</td>
+                            <td>42.5</td>
+                            <td>43</td>
+                            <td>44</td>
+                            <td>44.5</td>
+                            <td>45</td>
+                            <td>46</td>
+                            <td>47</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text">cm</th>
+                            <td>26</td>
+                            <td>26.5</td>
+                            <td>27</td>
+                            <td>27.5</td>
+                            <td>28</td>
+                            <td>28.5</td>
+                            <td>29</td>
+                            <td>29.5</td>
+                            <td>30</td>
+                            <td>30.5</td>
+                            <td>31</td>
+                            <td>31.5</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h4 class="table-title">Womens footwear</h4>
+                      <table class="table table-responsive-lg text-center">
+                        <tbody>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">USA</th>
+                            <td>6</td>
+                            <td>6.5</td>
+                            <td>7</td>
+                            <td>7.5</td>
+                            <td>8</td>
+                            <td>8.5</td>
+                            <td>9</td>
+                            <td>9.5</td>
+                            <td>10</td>
+                            <td>10.5</td>
+                            <td>11</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">UK</th>
+                            <td>3.5</td>
+                            <td>4</td>
+                            <td>4.5</td>
+                            <td>5</td>
+                            <td>5.5</td>
+                            <td>6</td>
+                            <td>6.5</td>
+                            <td>7</td>
+                            <td>7.5</td>
+                            <td>8</td>
+                            <td>8.5</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">EUR</th>
+                            <td>36.5</td>
+                            <td>37.5</td>
+                            <td>38</td>
+                            <td>38.5</td>
+                            <td>39</td>
+                            <td>39.5</td>
+                            <td>40</td>
+                            <td>41</td>
+                            <td>41.5</td>
+                            <td>42</td>
+                            <td>42.5</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text">cm</th>
+                            <td>24</td>
+                            <td>24.5</td>
+                            <td>25</td>
+                            <td>25.5</td>
+                            <td>26</td>
+                            <td>26.5</td>
+                            <td>27</td>
+                            <td>27.5</td>
+                            <td>28</td>
+                            <td>28.5</td>
+                            <td>29</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <h4 class="table-title">Childrens footwear</h4>
+                      <table class="table table-responsive-lg text-center">
+                        <tbody>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">USA</th>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">UK</th>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>12</td>
+                            <td>13</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text table-category">EUR</th>
+                            <td>28</td>
+                            <td>29.5</td>
+                            <td>31</td>
+                            <td>32</td>
+                            <td>33.5</td>
+                            <td>35</td>
+                            <td>36</td>
+                            <td>37.5</td>
+                            <td>38.5</td>
+                          </tr>
+                          <tr>
+                            <th colspan="4" class="main-blue white-text">cm</th>
+                            <td>18.5</td>
+                            <td>19.5</td>
+                            <td>20</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>23</td>
+                            <td>23.5</td>
+                            <td>24.5</td>
+                            <td>25.5</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="modal-footer"><button type="button" data-dismiss="modal" class="btn btn-secondary btn-sm">Close</button></div>
+                  </div>
+                </div>
+              </div>
+              <transition-stub name="fade">
+                <!---->
+              </transition-stub>
+            </div>
+            <div class="mb-4"><span class="font-weight-bold d-block mt-2 mb-2">Select amount</span>
+              <div class="amount"><button disabled="disabled" class="btn m-0">
+                  -
+                </button> <span class="amount-number border-dark">1</span> <button class="btn m-0">+</button></div>
+            </div>
+            <!----> <button class="cart-btn btn btn-lg button-accent ml-0 mr-0 p-3 waves-effect waves-light text-uppercase">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </transition-stub>
+  <div>
+    <div class="product-details">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="details-header">Product details</h2>
+          </div>
+        </div>
+        <div class="row no-gutters">
+          <div class="col-md-7">
+            <p class="description">Elegant sandals, perfect for stroles in the park as well as a night out on a hot summer evening. Made with the best material that includes soft leather stripes and platform of hight quality cork.</p>
+          </div>
+          <div class="col-md-5">
+            <ul class="additional-info">
+              <li>
+                Material:
+                <span class="font-weight-bold">Leather</span>
+              </li>
+              <li>
+                Style:
+                <span class="font-weight-bold">Sandals</span>
+              </li>
+              <li>
+                Season:
+                <span class="font-weight-bold">Late Spring, Summer</span>
+              </li>
+              <li>
+                Fastening:
+                <span class="font-weight-bold">Stripe</span>
+              </li>
+              <li>
+                Open front:
+                <span class="font-weight-bold">Yes</span>
+              </li>
+              <li>
+                Open heal:
+                <span class="font-weight-bold">Yes</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pt-4 mt-4">
+    <div id="product-grid" class="collection">
+      <div class="container">
+        <h1 class="collection-header">You might also like</h1>
+        <div class="row collection-items">
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/621" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag accent">-65%</div>
+                <div class="product-image"><img src="../assets/sneakers.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Be Yourself</h3> <span class="product-price fancy-font sale-price">
+        $89
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $32
+      </span>
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/622" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag">New</div>
+                <div class="product-image"><img src="../assets/shoes_white_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Star Gazers</h3> <span class="product-price fancy-font">
+        $139
+      </span>
+                <!---->
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/623" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag accent">-15%</div>
+                <div class="product-image"><img src="../assets/shoes_red_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Millenium Night</h3> <span class="product-price fancy-font sale-price">
+        $99
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $85
+      </span>
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/624" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag">New</div>
+                <div class="product-image"><img src="../assets/shoes_blue_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Be Diva Stillettos</h3> <span class="product-price fancy-font">
+        $84
+      </span>
+                <!---->
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/625" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag accent">-70%</div>
+                <div class="product-image"><img src="../assets/shoes_black_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Solarine</h3> <span class="product-price fancy-font sale-price">
+        $249
+      </span> <span class="product-price fancy-font deep-orange-text">
+        $75
+      </span>
+              </div>
+            </router-link-stub>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <router-link-stub to="/product/626" class="product-link">
+              <div class="product-thumbnail pb-2">
+                <div class="offer-tag">New</div>
+                <div class="product-image"><img src="../assets/shoes_grey_1.jpg"></div>
+                <h3 class="fancy-font mt-2 mb-2">Symphony Light</h3> <span class="product-price fancy-font">
+        $129
+      </span>
+                <!---->
+              </div>
+            </router-link-stub>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="container"><a href="#">
+        <div class="offer"></div>
+        <div class="offer-text">
+          <h3 class="text-uppercase">New collection</h3>
+          <h1 class="font-weight-bold">Autumn Adventure</h1>
+        </div>
+      </a></div>
+  </div>
+  <div>
+    <footer class="footer">
+      <div class="newsletter">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9">
+              <p class="newsletter-text">Subscribe to our newsletter and receive a coupon for 15% off your first purchase</p>
+            </div>
+            <div class="col-md-3 text-right"><button class="btn btn-outline-light newsletter-button mt-3">Subscribe</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="container links-container">
+        <div class="row">
+          <div class="col-md-8 footer-links">
+            <div class="row">
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">Departments</h4>
+                <div class="col-md-12 links"><a href="#">Women</a> <a href="#">Men</a> <a href="#">Children</a> <a href="#">Home</a></div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">User Profile</h4>
+                <div class="col-md-12 links"><a href="#">Orders</a> <a href="#">Reviews</a> <a href="#">Coupons</a></div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">Help</h4>
+                <div class="col-md-12 links"><a href="#">How to order</a> <a href="#">How to pay</a> <a href="#">Delivery</a> <a href="#">Returns</a></div>
+              </div>
+              <div class="col-md-3 col-sm-6">
+                <h4 class="links-header">About</h4>
+                <div class="col-md-12 links"><a href="#">About Us</a> <a href="#">Privacy Policy</a> <a href="#">Career</a> <a href="#">Contact Us</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 footer-social">
+            <div class="text-right"><a href="#" class="social-icon"><i class="fa fa-facebook fa-2x"></i></a> <a href="#" class="social-icon"><i class="fa fa-instagram fa-2x"></i></a> <a href="#" class="social-icon"><i class="fa fa-pinterest-p fa-2x"></i></a> <a href="#" class="social-icon"><i class="fa fa-youtube-square fa-2x"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;

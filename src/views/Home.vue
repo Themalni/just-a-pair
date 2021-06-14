@@ -14,9 +14,9 @@
 <script>
 import PageHeader from "@/components/PageHeader";
 import Collection from "@/components/Collection";
-import ProductThumbnail from "../components/product/ProductThumbnail";
+import ProductThumbnail from "@/components/product/ProductThumbnail";
 import Footer from "@/components/Footer";
-import products from "../services/productList";
+import products from "@/services/productList";
 
 export default {
   name: "Home",
